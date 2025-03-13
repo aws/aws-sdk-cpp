@@ -143,6 +143,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time that the origin endpoint was last reset.</p>
+     */
+    inline const Aws::Utils::DateTime& GetResetAt() const{ return m_resetAt; }
+    inline void SetResetAt(const Aws::Utils::DateTime& value) { m_resetAt = value; }
+    inline void SetResetAt(Aws::Utils::DateTime&& value) { m_resetAt = std::move(value); }
+    inline GetOriginEndpointResult& WithResetAt(const Aws::Utils::DateTime& value) { SetResetAt(value); return *this;}
+    inline GetOriginEndpointResult& WithResetAt(Aws::Utils::DateTime&& value) { SetResetAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description for your origin endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -275,6 +286,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::Utils::DateTime m_modifiedAt;
+
+    Aws::Utils::DateTime m_resetAt;
 
     Aws::String m_description;
 

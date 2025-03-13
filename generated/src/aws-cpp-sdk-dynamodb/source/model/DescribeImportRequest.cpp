@@ -40,4 +40,14 @@ Aws::Http::HeaderValueCollection DescribeImportRequest::GetRequestSpecificHeader
 
 
 
+DescribeImportRequest::EndpointParameters DescribeImportRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (ImportArnHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetImportArn(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

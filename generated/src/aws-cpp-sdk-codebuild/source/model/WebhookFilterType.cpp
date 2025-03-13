@@ -30,6 +30,7 @@ namespace Aws
         static const int TAG_NAME_HASH = HashingUtils::HashString("TAG_NAME");
         static const int RELEASE_NAME_HASH = HashingUtils::HashString("RELEASE_NAME");
         static const int REPOSITORY_NAME_HASH = HashingUtils::HashString("REPOSITORY_NAME");
+        static const int ORGANIZATION_NAME_HASH = HashingUtils::HashString("ORGANIZATION_NAME");
 
 
         WebhookFilterType GetWebhookFilterTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return WebhookFilterType::REPOSITORY_NAME;
           }
+          else if (hashCode == ORGANIZATION_NAME_HASH)
+          {
+            return WebhookFilterType::ORGANIZATION_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "RELEASE_NAME";
           case WebhookFilterType::REPOSITORY_NAME:
             return "REPOSITORY_NAME";
+          case WebhookFilterType::ORGANIZATION_NAME:
+            return "ORGANIZATION_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

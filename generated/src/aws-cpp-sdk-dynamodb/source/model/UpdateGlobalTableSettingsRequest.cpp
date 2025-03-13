@@ -86,4 +86,14 @@ Aws::Http::HeaderValueCollection UpdateGlobalTableSettingsRequest::GetRequestSpe
 
 
 
+UpdateGlobalTableSettingsRequest::EndpointParameters UpdateGlobalTableSettingsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (GlobalTableNameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetGlobalTableName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

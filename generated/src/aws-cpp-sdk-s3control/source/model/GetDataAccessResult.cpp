@@ -42,6 +42,11 @@ GetDataAccessResult& GetDataAccessResult::operator =(const Aws::AmazonWebService
     {
       m_matchedGrantTarget = Aws::Utils::Xml::DecodeEscapedXmlText(matchedGrantTargetNode.GetText());
     }
+    XmlNode granteeNode = resultNode.FirstChild("Grantee");
+    if(!granteeNode.IsNull())
+    {
+      m_grantee = granteeNode;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

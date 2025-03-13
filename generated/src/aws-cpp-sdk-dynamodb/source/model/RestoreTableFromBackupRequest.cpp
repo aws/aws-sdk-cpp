@@ -99,4 +99,14 @@ Aws::Http::HeaderValueCollection RestoreTableFromBackupRequest::GetRequestSpecif
 
 
 
+RestoreTableFromBackupRequest::EndpointParameters RestoreTableFromBackupRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (TargetTableNameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetTargetTableName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

@@ -33,6 +33,8 @@ Branch::Branch() :
     m_environmentVariablesHasBeenSet(false),
     m_enableAutoBuild(false),
     m_enableAutoBuildHasBeenSet(false),
+    m_enableSkewProtection(false),
+    m_enableSkewProtectionHasBeenSet(false),
     m_customDomainsHasBeenSet(false),
     m_frameworkHasBeenSet(false),
     m_activeJobIdHasBeenSet(false),
@@ -146,6 +148,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_enableAutoBuild = jsonValue.GetBool("enableAutoBuild");
 
     m_enableAutoBuildHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enableSkewProtection"))
+  {
+    m_enableSkewProtection = jsonValue.GetBool("enableSkewProtection");
+
+    m_enableSkewProtectionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customDomains"))
@@ -357,6 +366,12 @@ JsonValue Branch::Jsonize() const
   if(m_enableAutoBuildHasBeenSet)
   {
    payload.WithBool("enableAutoBuild", m_enableAutoBuild);
+
+  }
+
+  if(m_enableSkewProtectionHasBeenSet)
+  {
+   payload.WithBool("enableSkewProtection", m_enableSkewProtection);
 
   }
 

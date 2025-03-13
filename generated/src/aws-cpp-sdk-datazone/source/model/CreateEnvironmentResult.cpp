@@ -88,6 +88,12 @@ CreateEnvironmentResult& CreateEnvironmentResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("environmentConfigurationId"))
+  {
+    m_environmentConfigurationId = jsonValue.GetString("environmentConfigurationId");
+
+  }
+
   if(jsonValue.ValueExists("environmentProfileId"))
   {
     m_environmentProfileId = jsonValue.GetString("environmentProfileId");

@@ -47,4 +47,14 @@ Aws::Http::HeaderValueCollection DeleteResourcePolicyRequest::GetRequestSpecific
 
 
 
+DeleteResourcePolicyRequest::EndpointParameters DeleteResourcePolicyRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (ResourceArnHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetResourceArn(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

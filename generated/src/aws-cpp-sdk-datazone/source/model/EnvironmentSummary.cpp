@@ -25,6 +25,7 @@ EnvironmentSummary::EnvironmentSummary() :
     m_createdByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_environmentConfigurationIdHasBeenSet(false),
     m_environmentProfileIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -84,6 +85,13 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_domainId = jsonValue.GetString("domainId");
 
     m_domainIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("environmentConfigurationId"))
+  {
+    m_environmentConfigurationId = jsonValue.GetString("environmentConfigurationId");
+
+    m_environmentConfigurationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentProfileId"))
@@ -174,6 +182,12 @@ JsonValue EnvironmentSummary::Jsonize() const
   if(m_domainIdHasBeenSet)
   {
    payload.WithString("domainId", m_domainId);
+
+  }
+
+  if(m_environmentConfigurationIdHasBeenSet)
+  {
+   payload.WithString("environmentConfigurationId", m_environmentConfigurationId);
 
   }
 

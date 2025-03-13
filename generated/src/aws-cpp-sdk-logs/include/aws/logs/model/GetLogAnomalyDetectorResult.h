@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+     * <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }

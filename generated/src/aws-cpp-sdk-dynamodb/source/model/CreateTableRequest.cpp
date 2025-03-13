@@ -164,4 +164,14 @@ Aws::Http::HeaderValueCollection CreateTableRequest::GetRequestSpecificHeaders()
 
 
 
+CreateTableRequest::EndpointParameters CreateTableRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (TableNameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetTableName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

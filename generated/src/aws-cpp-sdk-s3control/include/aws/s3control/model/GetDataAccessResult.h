@@ -7,6 +7,7 @@
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/Credentials.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/model/Grantee.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The user, group, or role that was granted access to the S3 location scope.
+     * For directory identities, this API also returns the grants of the IAM role used
+     * for the identity-aware request. For more information on identity-aware sessions,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting
+     * permissions to use identity-aware console sessions</a>. </p>
+     */
+    inline const Grantee& GetGrantee() const{ return m_grantee; }
+    inline void SetGrantee(const Grantee& value) { m_grantee = value; }
+    inline void SetGrantee(Grantee&& value) { m_grantee = std::move(value); }
+    inline GetDataAccessResult& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
+    inline GetDataAccessResult& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * AWS Request Id value
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
@@ -88,6 +105,8 @@ namespace Model
     Credentials m_credentials;
 
     Aws::String m_matchedGrantTarget;
+
+    Grantee m_grantee;
 
     Aws::String m_requestId;
 

@@ -40,4 +40,14 @@ Aws::Http::HeaderValueCollection DescribeGlobalTableRequest::GetRequestSpecificH
 
 
 
+DescribeGlobalTableRequest::EndpointParameters DescribeGlobalTableRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (GlobalTableNameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetGlobalTableName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

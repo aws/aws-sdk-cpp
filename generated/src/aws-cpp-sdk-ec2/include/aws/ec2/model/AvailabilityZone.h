@@ -49,7 +49,7 @@ namespace Model
      * <p>For Availability Zones, this parameter always has the value of
      * <code>opt-in-not-required</code>.</p> <p>For Local Zones and Wavelength Zones,
      * this parameter is the opt-in status. The possible values are
-     * <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+     * <code>opted-in</code> and <code>not-opted-in</code>.</p>
      */
     inline const AvailabilityZoneOptInStatus& GetOptInStatus() const{ return m_optInStatus; }
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
@@ -148,8 +148,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of zone. The valid values are <code>availability-zone</code>,
-     * <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+     * <p>The type of zone.</p> <p>Valid values: <code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code> </p>
      */
     inline const Aws::String& GetZoneType() const{ return m_zoneType; }
     inline bool ZoneTypeHasBeenSet() const { return m_zoneTypeHasBeenSet; }
@@ -208,8 +208,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
-     * value is always <code>available</code>.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The
+     * possible values are <code>available</code>, <code>unavailable</code>, and
+     * <code>constrained</code>.</p>
      */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

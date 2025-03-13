@@ -156,6 +156,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration ID that is used to create the environment.</p>
+     */
+    inline const Aws::String& GetEnvironmentConfigurationId() const{ return m_environmentConfigurationId; }
+    inline void SetEnvironmentConfigurationId(const Aws::String& value) { m_environmentConfigurationId = value; }
+    inline void SetEnvironmentConfigurationId(Aws::String&& value) { m_environmentConfigurationId = std::move(value); }
+    inline void SetEnvironmentConfigurationId(const char* value) { m_environmentConfigurationId.assign(value); }
+    inline GetEnvironmentResult& WithEnvironmentConfigurationId(const Aws::String& value) { SetEnvironmentConfigurationId(value); return *this;}
+    inline GetEnvironmentResult& WithEnvironmentConfigurationId(Aws::String&& value) { SetEnvironmentConfigurationId(std::move(value)); return *this;}
+    inline GetEnvironmentResult& WithEnvironmentConfigurationId(const char* value) { SetEnvironmentConfigurationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the environment profile with which the environment is created.</p>
      */
     inline const Aws::String& GetEnvironmentProfileId() const{ return m_environmentProfileId; }
@@ -333,6 +346,8 @@ namespace Model
     Aws::Vector<ConfigurableEnvironmentAction> m_environmentActions;
 
     Aws::String m_environmentBlueprintId;
+
+    Aws::String m_environmentConfigurationId;
 
     Aws::String m_environmentProfileId;
 

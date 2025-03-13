@@ -48,30 +48,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
-     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
-     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
-     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
-     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
-     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
-     * available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), Asia Pacific (Mumbai), Asia Pacific (Singapore), Asia Pacific
-     * (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America
-     * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
-     * fleets during project creation, <code>type</code> will be ignored.</p> 
-     * <p>For more information, see <a
+     * <p>The type of build environment to use for related builds.</p>  <p>If
+     * you're using compute fleets during project creation, <code>type</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */

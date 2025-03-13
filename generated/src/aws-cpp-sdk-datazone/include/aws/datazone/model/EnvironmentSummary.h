@@ -125,6 +125,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration ID with which the environment is created.</p>
+     */
+    inline const Aws::String& GetEnvironmentConfigurationId() const{ return m_environmentConfigurationId; }
+    inline bool EnvironmentConfigurationIdHasBeenSet() const { return m_environmentConfigurationIdHasBeenSet; }
+    inline void SetEnvironmentConfigurationId(const Aws::String& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = value; }
+    inline void SetEnvironmentConfigurationId(Aws::String&& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = std::move(value); }
+    inline void SetEnvironmentConfigurationId(const char* value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId.assign(value); }
+    inline EnvironmentSummary& WithEnvironmentConfigurationId(const Aws::String& value) { SetEnvironmentConfigurationId(value); return *this;}
+    inline EnvironmentSummary& WithEnvironmentConfigurationId(Aws::String&& value) { SetEnvironmentConfigurationId(std::move(value)); return *this;}
+    inline EnvironmentSummary& WithEnvironmentConfigurationId(const char* value) { SetEnvironmentConfigurationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the environment profile with which the environment was
      * created.</p>
      */
@@ -236,6 +250,9 @@ namespace Model
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    Aws::String m_environmentConfigurationId;
+    bool m_environmentConfigurationIdHasBeenSet = false;
 
     Aws::String m_environmentProfileId;
     bool m_environmentProfileIdHasBeenSet = false;

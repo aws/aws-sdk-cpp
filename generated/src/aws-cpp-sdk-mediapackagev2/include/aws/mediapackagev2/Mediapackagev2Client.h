@@ -531,9 +531,8 @@ namespace mediapackagev2
         }
 
         /**
-         * <p>Retrieves all channel groups that are configured in AWS Elemental
-         * MediaPackage, including the channels and origin endpoints that are associated
-         * with it.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all channel groups that are configured in Elemental
+         * MediaPackage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannelGroups">AWS
          * API Reference</a></p>
          */
@@ -713,6 +712,65 @@ namespace mediapackagev2
         void PutOriginEndpointPolicyAsync(const PutOriginEndpointPolicyRequestT& request, const PutOriginEndpointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Mediapackagev2Client::PutOriginEndpointPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Resetting the channel can help to clear errors from misconfigurations in the
+         * encoder. A reset refreshes the ingest stream and removes previous content. </p>
+         * <p> Be sure to stop the encoder before you reset the channel, and wait at least
+         * 30 seconds before you restart the encoder. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetChannelStateOutcome ResetChannelState(const Model::ResetChannelStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetChannelState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetChannelStateRequestT = Model::ResetChannelStateRequest>
+        Model::ResetChannelStateOutcomeCallable ResetChannelStateCallable(const ResetChannelStateRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::ResetChannelState, request);
+        }
+
+        /**
+         * An Async wrapper for ResetChannelState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetChannelStateRequestT = Model::ResetChannelStateRequest>
+        void ResetChannelStateAsync(const ResetChannelStateRequestT& request, const ResetChannelStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::ResetChannelState, request, handler, context);
+        }
+
+        /**
+         * <p>Resetting the origin endpoint can help to resolve unexpected behavior and
+         * other content packaging issues. It also helps to preserve special events when
+         * you don't want the previous content to be available for viewing. A reset clears
+         * out all previous content from the origin endpoint.</p> <p>MediaPackage might
+         * return old content from this endpoint in the first 30 seconds after the endpoint
+         * reset. For best results, when possible, wait 30 seconds from endpoint reset to
+         * send playback requests to this endpoint. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetOriginEndpointStateOutcome ResetOriginEndpointState(const Model::ResetOriginEndpointStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetOriginEndpointState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetOriginEndpointStateRequestT = Model::ResetOriginEndpointStateRequest>
+        Model::ResetOriginEndpointStateOutcomeCallable ResetOriginEndpointStateCallable(const ResetOriginEndpointStateRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::ResetOriginEndpointState, request);
+        }
+
+        /**
+         * An Async wrapper for ResetOriginEndpointState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetOriginEndpointStateRequestT = Model::ResetOriginEndpointStateRequest>
+        void ResetOriginEndpointStateAsync(const ResetOriginEndpointStateRequestT& request, const ResetOriginEndpointStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::ResetOriginEndpointState, request, handler, context);
         }
 
         /**

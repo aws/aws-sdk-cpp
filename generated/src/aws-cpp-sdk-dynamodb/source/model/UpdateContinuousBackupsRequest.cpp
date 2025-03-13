@@ -47,4 +47,14 @@ Aws::Http::HeaderValueCollection UpdateContinuousBackupsRequest::GetRequestSpeci
 
 
 
+UpdateContinuousBackupsRequest::EndpointParameters UpdateContinuousBackupsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (TableNameHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetTableName(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

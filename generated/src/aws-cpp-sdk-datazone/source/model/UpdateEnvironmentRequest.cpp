@@ -13,17 +13,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
+    m_blueprintVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
     m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_userParametersHasBeenSet(false)
 {
 }
 
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_blueprintVersionHasBeenSet)
+  {
+   payload.WithString("blueprintVersion", m_blueprintVersion);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -45,6 +53,17 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_userParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
+   for(unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex)
+   {
+     userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
+   }
+   payload.WithArray("userParameters", std::move(userParametersJsonList));
 
   }
 

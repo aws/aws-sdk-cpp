@@ -110,4 +110,14 @@ Aws::Http::HeaderValueCollection ExportTableToPointInTimeRequest::GetRequestSpec
 
 
 
+ExportTableToPointInTimeRequest::EndpointParameters ExportTableToPointInTimeRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (TableArnHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetTableArn(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

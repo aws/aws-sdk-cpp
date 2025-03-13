@@ -8,6 +8,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/EnvironmentParameter.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +33,21 @@ namespace Model
 
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The blueprint version to which the environment should be updated. You can
+     * only specify the following string for this parameter: <code>latest</code>.</p>
+     */
+    inline const Aws::String& GetBlueprintVersion() const{ return m_blueprintVersion; }
+    inline bool BlueprintVersionHasBeenSet() const { return m_blueprintVersionHasBeenSet; }
+    inline void SetBlueprintVersion(const Aws::String& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = value; }
+    inline void SetBlueprintVersion(Aws::String&& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = std::move(value); }
+    inline void SetBlueprintVersion(const char* value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion.assign(value); }
+    inline UpdateEnvironmentRequest& WithBlueprintVersion(const Aws::String& value) { SetBlueprintVersion(value); return *this;}
+    inline UpdateEnvironmentRequest& WithBlueprintVersion(Aws::String&& value) { SetBlueprintVersion(std::move(value)); return *this;}
+    inline UpdateEnvironmentRequest& WithBlueprintVersion(const char* value) { SetBlueprintVersion(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -106,7 +122,24 @@ namespace Model
     inline UpdateEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline UpdateEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The user parameters of the environment.</p>
+     */
+    inline const Aws::Vector<EnvironmentParameter>& GetUserParameters() const{ return m_userParameters; }
+    inline bool UserParametersHasBeenSet() const { return m_userParametersHasBeenSet; }
+    inline void SetUserParameters(const Aws::Vector<EnvironmentParameter>& value) { m_userParametersHasBeenSet = true; m_userParameters = value; }
+    inline void SetUserParameters(Aws::Vector<EnvironmentParameter>&& value) { m_userParametersHasBeenSet = true; m_userParameters = std::move(value); }
+    inline UpdateEnvironmentRequest& WithUserParameters(const Aws::Vector<EnvironmentParameter>& value) { SetUserParameters(value); return *this;}
+    inline UpdateEnvironmentRequest& WithUserParameters(Aws::Vector<EnvironmentParameter>&& value) { SetUserParameters(std::move(value)); return *this;}
+    inline UpdateEnvironmentRequest& AddUserParameters(const EnvironmentParameter& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(value); return *this; }
+    inline UpdateEnvironmentRequest& AddUserParameters(EnvironmentParameter&& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(std::move(value)); return *this; }
+    ///@}
   private:
+
+    Aws::String m_blueprintVersion;
+    bool m_blueprintVersionHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -122,6 +155,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<EnvironmentParameter> m_userParameters;
+    bool m_userParametersHasBeenSet = false;
   };
 
 } // namespace Model

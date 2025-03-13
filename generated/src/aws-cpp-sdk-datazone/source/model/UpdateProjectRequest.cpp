@@ -18,7 +18,9 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_environmentDeploymentDetailsHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
     m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_projectProfileVersionHasBeenSet(false),
+    m_userParametersHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,23 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_projectProfileVersionHasBeenSet)
+  {
+   payload.WithString("projectProfileVersion", m_projectProfileVersion);
+
+  }
+
+  if(m_userParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
+   for(unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex)
+   {
+     userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
+   }
+   payload.WithArray("userParameters", std::move(userParametersJsonList));
 
   }
 

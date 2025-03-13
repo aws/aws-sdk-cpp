@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
+#include <aws/ivs-realtime/model/CompositionRecordingHlsConfiguration.h>
 #include <aws/ivs-realtime/model/RecordingConfigurationFormat.h>
 #include <utility>
 
@@ -40,6 +41,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An HLS configuration object to return information about how the recording
+     * will be configured.</p>
+     */
+    inline const CompositionRecordingHlsConfiguration& GetHlsConfiguration() const{ return m_hlsConfiguration; }
+    inline bool HlsConfigurationHasBeenSet() const { return m_hlsConfigurationHasBeenSet; }
+    inline void SetHlsConfiguration(const CompositionRecordingHlsConfiguration& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = value; }
+    inline void SetHlsConfiguration(CompositionRecordingHlsConfiguration&& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = std::move(value); }
+    inline RecordingConfiguration& WithHlsConfiguration(const CompositionRecordingHlsConfiguration& value) { SetHlsConfiguration(value); return *this;}
+    inline RecordingConfiguration& WithHlsConfiguration(CompositionRecordingHlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The recording format for storing a recording in Amazon S3.</p>
      */
     inline const RecordingConfigurationFormat& GetFormat() const{ return m_format; }
@@ -50,6 +64,9 @@ namespace Model
     inline RecordingConfiguration& WithFormat(RecordingConfigurationFormat&& value) { SetFormat(std::move(value)); return *this;}
     ///@}
   private:
+
+    CompositionRecordingHlsConfiguration m_hlsConfiguration;
+    bool m_hlsConfigurationHasBeenSet = false;
 
     RecordingConfigurationFormat m_format;
     bool m_formatHasBeenSet = false;

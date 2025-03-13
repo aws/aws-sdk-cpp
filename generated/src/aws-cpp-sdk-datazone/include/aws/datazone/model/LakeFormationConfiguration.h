@@ -58,7 +58,8 @@ namespace Model
     ///@{
     /**
      * <p>The role that is used to manage read/write access to the chosen Amazon S3
-     * bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+     * bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access
+     * mode.</p>
      */
     inline const Aws::String& GetLocationRegistrationRole() const{ return m_locationRegistrationRole; }
     inline bool LocationRegistrationRoleHasBeenSet() const { return m_locationRegistrationRoleHasBeenSet; }

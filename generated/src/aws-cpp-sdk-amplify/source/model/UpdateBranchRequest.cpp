@@ -23,6 +23,8 @@ UpdateBranchRequest::UpdateBranchRequest() :
     m_enableNotificationHasBeenSet(false),
     m_enableAutoBuild(false),
     m_enableAutoBuildHasBeenSet(false),
+    m_enableSkewProtection(false),
+    m_enableSkewProtectionHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
@@ -71,6 +73,12 @@ Aws::String UpdateBranchRequest::SerializePayload() const
   if(m_enableAutoBuildHasBeenSet)
   {
    payload.WithBool("enableAutoBuild", m_enableAutoBuild);
+
+  }
+
+  if(m_enableSkewProtectionHasBeenSet)
+  {
+   payload.WithBool("enableSkewProtection", m_enableSkewProtection);
 
   }
 

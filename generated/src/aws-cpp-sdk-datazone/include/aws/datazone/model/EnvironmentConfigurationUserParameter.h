@@ -55,6 +55,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the environment.</p>
+     */
+    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
+    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
+    inline EnvironmentConfigurationUserParameter& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
+    inline EnvironmentConfigurationUserParameter& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
+    inline EnvironmentConfigurationUserParameter& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The environment parameters.</p>
      */
     inline const Aws::Vector<EnvironmentParameter>& GetEnvironmentParameters() const{ return m_environmentParameters; }
@@ -70,6 +84,9 @@ namespace Model
 
     Aws::String m_environmentConfigurationName;
     bool m_environmentConfigurationNameHasBeenSet = false;
+
+    Aws::String m_environmentId;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Vector<EnvironmentParameter> m_environmentParameters;
     bool m_environmentParametersHasBeenSet = false;

@@ -40,4 +40,14 @@ Aws::Http::HeaderValueCollection DeleteBackupRequest::GetRequestSpecificHeaders(
 
 
 
+DeleteBackupRequest::EndpointParameters DeleteBackupRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BackupArnHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ResourceArn"), this->GetBackupArn(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

@@ -27,7 +27,9 @@ CreateLowLatencyHlsManifestConfiguration::CreateLowLatencyHlsManifestConfigurati
     m_manifestWindowSecondsHasBeenSet(false),
     m_programDateTimeIntervalSeconds(0),
     m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false)
+    m_filterConfigurationHasBeenSet(false),
+    m_urlEncodeChildManifest(false),
+    m_urlEncodeChildManifestHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,13 @@ CreateLowLatencyHlsManifestConfiguration& CreateLowLatencyHlsManifestConfigurati
     m_filterConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UrlEncodeChildManifest"))
+  {
+    m_urlEncodeChildManifest = jsonValue.GetBool("UrlEncodeChildManifest");
+
+    m_urlEncodeChildManifestHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue CreateLowLatencyHlsManifestConfiguration::Jsonize() const
   if(m_filterConfigurationHasBeenSet)
   {
    payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
+
+  }
+
+  if(m_urlEncodeChildManifestHasBeenSet)
+  {
+   payload.WithBool("UrlEncodeChildManifest", m_urlEncodeChildManifest);
 
   }
 
