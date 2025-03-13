@@ -107,7 +107,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
     }
     URI uri(computeEndpointOutcome.GetResult().endpoint);
     uri.SetPath(uri.GetPath() + "/" + key);
-    return AwsSmithyClientT::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+    return AwsLegacyClientT::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
         computeEndpointOutcome.GetResult().signerServiceName.c_str(), expirationInSeconds, customizedHeaders, nullptr);
 #else
     Aws::Map<Aws::String, Aws::String> params;
