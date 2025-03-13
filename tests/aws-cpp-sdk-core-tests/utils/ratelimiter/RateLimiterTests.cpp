@@ -185,7 +185,6 @@ TEST_F(DefaultRateLimitTest, renormalizedChangeRateLimitTest) {
 
 TEST_F(DefaultRateLimitTest, unnormalizedChangeRateLimitTest) {
   // same operations as the normalized test, just with different assert values
-
   DefaultRateLimiter<std::chrono::steady_clock, std::chrono::seconds, false> limiter(100, DefaultRateLimitTest::GetTestTime);
 
   // cost to -600

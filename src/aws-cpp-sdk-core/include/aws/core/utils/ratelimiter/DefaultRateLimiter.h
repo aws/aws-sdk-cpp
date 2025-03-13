@@ -62,8 +62,9 @@ class DefaultRateLimiter : public RateLimiterInterface {
     auto elapsedTime = (now - m_accumulatorUpdated).count();
 
     // check for overflow case
-    if (m_replenishNumerator != 0 && (elapsedTime > std::numeric_limits<int64_t>::max() / m_replenishNumerator ||
-                                      m_accumulatorFraction > std::numeric_limits<int64_t>::max() - (elapsedTime * m_replenishNumerator))) {
+    if (m_replenishNumerator != 0 && elapsedTime > 0 &&
+        (elapsedTime > std::numeric_limits<int64_t>::max() / m_replenishNumerator ||
+         m_accumulatorFraction > std::numeric_limits<int64_t>::max() - (elapsedTime * m_replenishNumerator))) {
       m_accumulator = m_maxRate;
       m_accumulatorFraction = 0;
     } else {
