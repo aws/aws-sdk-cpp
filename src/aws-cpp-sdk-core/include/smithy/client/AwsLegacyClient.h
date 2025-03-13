@@ -103,7 +103,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 {},
@@ -116,7 +116,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 {},
@@ -128,7 +128,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -140,7 +140,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -152,7 +152,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {           
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -164,7 +164,7 @@ namespace client
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {            
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -177,7 +177,7 @@ namespace client
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {
             AWS_UNREFERENCED_PARAM(signerName);
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -190,7 +190,7 @@ namespace client
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
             AWS_UNREFERENCED_PARAM(signerName);
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 uri,
                 method,
                 region ? region : Aws::String{},
@@ -210,7 +210,7 @@ namespace client
                                          const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
             AWS_UNREFERENCED_PARAM(signerName);
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 endpoint,
                 method,
                 signerRegionOverride ? signerRegionOverride : Aws::String{},
@@ -224,7 +224,7 @@ namespace client
                                          const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
                                          const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {})
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 request,
                 uri,
                 method,
@@ -240,7 +240,7 @@ namespace client
                                          const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {
             AWS_UNREFERENCED_PARAM(signerName);
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                     request,
                     uri,
                     method,
@@ -255,7 +255,7 @@ namespace client
                                          const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
                                          const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 request,
                 uri,
                 method,
@@ -270,7 +270,7 @@ namespace client
                                          const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
                                          const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const
         {
-            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+            return GeneratePresignedUrl(
                 request,
                 uri,
                 method,
@@ -280,6 +280,130 @@ namespace client
                 expirationInSeconds,
                 serviceSpecificParameter);
         }
+
+
+        Aws::String GeneratePresignedUrl(
+            const Aws::AmazonWebServiceRequest& request,
+            const Aws::Http::URI& uri,
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            const Aws::Http::QueryStringParameterCollection& extraParams,
+            long long expirationInSeconds,
+            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            typename DerivedT::ExtractUriCallback getUriCallback = [&](Aws::Http::URI& uriCopy,Aws::String& ,
+                Aws::String& , const AuthSchemeOption&){
+                uriCopy = uri;
+                request.PutToPresignedUrl(uriCopy);
+                return true;
+            };
+
+            typename DerivedT::CreateHttpRequestCallback createHttpRequestCallback = [&extraParams,&serviceSpecificParameters](const Aws::Http::URI& uri, const Aws::Http::HttpMethod& method) -> std::shared_ptr<Aws::Http::HttpRequest> {
+                std::shared_ptr<Aws::Http::HttpRequest> httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                for (auto& param : extraParams)
+                {
+                    httpRequest->AddQueryStringParameter(param.first.c_str(), param.second);
+                }
+                httpRequest->SetServiceSpecificParameters(serviceSpecificParameters);
+
+                return httpRequest;
+            };
+
+            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+                std::move(getUriCallback),
+                std::move(createHttpRequestCallback),
+                method,
+                region,
+                serviceName,
+                expirationInSeconds);
+        }
+        private:
+        Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
+                                                  Aws::Http::HttpMethod method,
+                                                  const Aws::String& region,
+                                                  const Aws::String& serviceName,
+                                                  long long expirationInSeconds,
+                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+
+            typename DerivedT::ExtractUriCallback getUriCallback = [&](Aws::Http::URI& uriCopy,Aws::String& ,Aws::String& , const AuthSchemeOption&){
+                uriCopy = uri;
+                return true;
+            };
+
+            typename DerivedT::CreateHttpRequestCallback createHttpRequestCallback = [&customizedHeaders, &serviceSpecificParameters](const Aws::Http::URI& uri, const Aws::Http::HttpMethod& method) -> std::shared_ptr<Aws::Http::HttpRequest> {
+                std::shared_ptr<Aws::Http::HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                if(serviceSpecificParameters)
+                {
+                    request->SetServiceSpecificParameters(serviceSpecificParameters);
+                }
+                for (const auto& it: customizedHeaders)
+                {
+                    request->SetHeaderValue(it.first.c_str(), it.second);
+                }
+                return request;
+            };
+
+            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+                std::move(getUriCallback),
+                std::move(createHttpRequestCallback),
+                method,
+                region,
+                serviceName,
+                expirationInSeconds);
+
+        }
+
+        
+        Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                  Aws::Http::HttpMethod method,
+                                                  const Aws::String& region,
+                                                  const Aws::String& serviceName,
+                                                  long long expirationInSeconds,
+                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+
+            typename DerivedT::ExtractUriCallback getUriCallback = [&](Aws::Http::URI& uriCopy,Aws::String& signerRegionOverride,Aws::String& signerServiceNameOverride, const AuthSchemeOption&) -> bool {
+                uriCopy =  endpoint.GetURI();
+                signerRegionOverride = region;
+                signerServiceNameOverride = serviceName;
+                // signer name is needed for some identity resolvers
+                if (endpoint.GetAttributes()) {
+                    if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+                        signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+                    }
+                    if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+                        signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+                    }
+                    if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+                        signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+                    }
+                }
+                return true;
+            };
+
+            typename DerivedT::CreateHttpRequestCallback createHttpRequestCallback = [&customizedHeaders, &serviceSpecificParameters](const Aws::Http::URI& uri, const Aws::Http::HttpMethod& method) -> std::shared_ptr<Aws::Http::HttpRequest> {
+                std::shared_ptr<Aws::Http::HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                request->SetServiceSpecificParameters(serviceSpecificParameters);
+                for (const auto& it: customizedHeaders)
+                {
+                    request->SetHeaderValue(it.first.c_str(), it.second);
+                }
+                return request;
+            };
+
+            return static_cast<const DerivedT*>(this)->GeneratePresignedUrl(
+                std::move(getUriCallback),
+                std::move(createHttpRequestCallback),
+                method,
+                region,
+                serviceName,
+                expirationInSeconds);
+        }
+
     };
 
 } // namespace client

@@ -324,7 +324,7 @@ CopyDBClusterSnapshotOutcome DocDBClient::CopyDBClusterSnapshot(const CopyDBClus
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CopyDBClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }
@@ -357,7 +357,7 @@ CreateDBClusterOutcome DocDBClient::CreateDBCluster(const CreateDBClusterRequest
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CreateDBCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }

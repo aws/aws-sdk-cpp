@@ -228,7 +228,7 @@ namespace client
             auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
-
+        
         Aws::String GeneratePresignedUrl(
             EndpointUpdateCallback&& endpointCallback,
             Aws::Http::HttpMethod method,
@@ -238,151 +238,64 @@ namespace client
             const Aws::Http::HeaderValueCollection& customizedHeaders,
             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
         {
-            AwsSmithyClientAsyncRequestContext ctx;
-            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
-            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-            
-            Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
-            const auto authSchemeEpParams = authSchemeOption.endpointParameters();
-            epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
-            if(serviceSpecificParameters)
-            {
-                auto bucketIt = serviceSpecificParameters->parameterMap.find("bucketName");
-                if(bucketIt != serviceSpecificParameters->parameterMap.end())
+            ExtractUriCallback getUriCallback = [&](Aws::Http::URI& uri, Aws::String& signerRegionOverride,
+                Aws::String& signerServiceNameOverride, const AuthSchemeOption& authSchemeOption) -> bool{
+
+                Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
+                const auto authSchemeEpParams = authSchemeOption.endpointParameters();
+                epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+                if(serviceSpecificParameters)
                 {
-                    auto bucket = bucketIt->second;
-                    epParams.emplace_back(Aws::String("Bucket"), bucket);
+                    auto bucketIt = serviceSpecificParameters->parameterMap.find("bucketName");
+                    if(bucketIt != serviceSpecificParameters->parameterMap.end())
+                    {
+                        auto bucket = bucketIt->second;
+                        epParams.emplace_back(Aws::String("Bucket"), bucket);
+                    }
                 }
-            }
 
-            auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
-            if (!epResolutionOutcome.IsSuccess())
-            {
-                AWS_LOGSTREAM_ERROR(ServiceNameT, "Presigned URL generating failed. Encountered error: " << epResolutionOutcome.GetError().GetMessage());
-                return {};
-            }
-            auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-            const Aws::Http::URI& uri = endpoint.GetURI();
-            auto signerRegionOverride = region;
-            auto signerServiceNameOverride = serviceName;
-            //signer name is needed for some identity resolvers
-            if (endpoint.GetAttributes()) {
-                if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-                }
-                if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-                }
-                if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-                    signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-                }
-            }
-            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            request->SetServiceSpecificParameters(serviceSpecificParameters);
-            for (const auto& it: customizedHeaders)
-            {
-                request->SetHeaderValue(it.first.c_str(), it.second);
-            }
-            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, signerRegionOverride, signerServiceNameOverride, expirationInSeconds).IsSuccess())
-            {
-                return request->GetURIString();
-            }
-            return {};
-        }
-
-        Aws::String GeneratePresignedUrl(
-            const Aws::AmazonWebServiceRequest& request,
-            const Aws::Http::URI& uri,
-            Aws::Http::HttpMethod method,
-            const Aws::String& region,
-            const Aws::String& serviceName,
-            const Aws::Http::QueryStringParameterCollection& extraParams,
-            long long expirationInSeconds,
-            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
-        {
-            AwsSmithyClientAsyncRequestContext ctx;
-            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
-            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-            
-            Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
-            const auto authSchemeEpParams = authSchemeOption.endpointParameters();
-            epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
-            if(serviceSpecificParameters)
-            {
-                auto bucketIt = serviceSpecificParameters->parameterMap.find("bucketName");
-                if(bucketIt != serviceSpecificParameters->parameterMap.end())
+                auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+                if (!epResolutionOutcome.IsSuccess())
                 {
-                    auto bucket = bucketIt->second;
-                    epParams.emplace_back(Aws::String("Bucket"), bucket);
+                    AWS_LOGSTREAM_ERROR(ServiceNameT, "Presigned URL generating failed. Encountered error: " << epResolutionOutcome.GetError().GetMessage());
+                    return false;
                 }
-            }
-            Aws::Http::URI uriCopy = uri;
-            request.PutToPresignedUrl(uriCopy);
-            std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uriCopy, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+                uri = endpoint.GetURI();
+                signerRegionOverride = region;
+                signerServiceNameOverride = serviceName;
+                //signer name is needed for some identity resolvers
+                if (endpoint.GetAttributes()) {
+                    if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+                        signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+                    }
+                    if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+                        signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+                    }
+                    if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+                        signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+                    }
+                }
+                return true;
+            };
 
-            for (auto& param : extraParams)
-            {
-                httpRequest->AddQueryStringParameter(param.first.c_str(), param.second);
-            }
-            httpRequest->SetServiceSpecificParameters(serviceSpecificParameters);
+            CreateHttpRequestCallback createHttpRequestCallback = [&customizedHeaders, &serviceSpecificParameters](const Aws::Http::URI& uri, const Aws::Http::HttpMethod& method) -> std::shared_ptr<HttpRequest> {
+                std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                request->SetServiceSpecificParameters(serviceSpecificParameters);
+                for (const auto& it: customizedHeaders)
+                {
+                    request->SetHeaderValue(it.first.c_str(), it.second);
+                }
+                return request;
+            };
 
-            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(httpRequest, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
-            {
-                return httpRequest->GetURIString();
-            }
-            return {};
-        }
-    
-        //legacy
-        Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
-                                                  Aws::Http::HttpMethod method,
-                                                  const Aws::String& region,
-                                                  const Aws::String& serviceName,
-                                                  long long expirationInSeconds,
-                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
-        {
-            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            request->SetServiceSpecificParameters(serviceSpecificParameters);
-            for (const auto& it: customizedHeaders)
-            {
-                request->SetHeaderValue(it.first.c_str(), it.second);
-            }
-            AwsSmithyClientAsyncRequestContext ctx;
-            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
-            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
-            {
-                return request->GetURIString();
-            }
-            return {};
-        }
-
-        
-        Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                                  Aws::Http::HttpMethod method,
-                                                  const Aws::String& region,
-                                                  const Aws::String& serviceName,
-                                                  long long expirationInSeconds,
-                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
-        {
-            const Aws::Http::URI& uri = endpoint.GetURI();
-            auto signerRegionOverride = region;
-            auto signerServiceNameOverride = serviceName;
-            // signer name is needed for some identity resolvers
-            if (endpoint.GetAttributes()) {
-                if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-                }
-                if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-                }
-                if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-                    signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-                }
-            }
-            return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
+            return GeneratePresignedUrl(
+                std::move(getUriCallback),
+                std::move(createHttpRequestCallback),
+                method,
+                region,
+                serviceName,
+                expirationInSeconds);
         }
 
         /* Service client specific config, the actual object is stored in AwsSmithyClientBase by pointer
@@ -395,6 +308,35 @@ namespace client
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
         std::shared_ptr<SerializerT> m_serializer{};
     private:
+        using ExtractUriCallback = std::function<bool (Aws::Http::URI&, Aws::String& region, Aws::String& serviceName,const AuthSchemeOption&)>;
+        using CreateHttpRequestCallback = std::function<std::shared_ptr<HttpRequest>  (const Aws::Http::URI&, const Aws::Http::HttpMethod&)>;
+
+        Aws::String GeneratePresignedUrl(
+            ExtractUriCallback&& getUriCallback,
+            CreateHttpRequestCallback&& createHttpRequestCallback,
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            long long expirationInSeconds) const
+        {
+            AwsSmithyClientAsyncRequestContext ctx;
+            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
+            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+            Aws::Http::URI uri;
+            Aws::String signerRegionOverride = region;
+            Aws::String signerServiceNameOverride = serviceName;
+            if(!getUriCallback(uri , signerRegionOverride, signerServiceNameOverride, authSchemeOption))
+            {
+                return {};
+            }
+            std::shared_ptr<HttpRequest> request = createHttpRequestCallback(uri, method);
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, signerRegionOverride, signerServiceNameOverride, expirationInSeconds).IsSuccess())
+            {
+                return request->GetURIString();
+            }
+            return {};
+        }
+
         friend class AwsLegacyClientT<ServiceNameT, ResponseT, AwsSmithyClientT<ServiceNameT, 
             ServiceClientConfigurationT,
             ServiceAuthSchemeResolverT,

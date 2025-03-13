@@ -331,7 +331,7 @@ Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const ch
     URI uri(ss.str());
     uri.AddQueryStringParameter("Action", "connect");
     uri.AddQueryStringParameter("DBUser", dbUserName);
-    auto url = AwsSmithyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/, {}, {});
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/, {});
     Aws::Utils::StringUtils::Replace(url, "http://", "");
 
     return url;
@@ -555,7 +555,7 @@ CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBCluste
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CopyDBClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }
@@ -610,7 +610,7 @@ CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& req
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CopyDBSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }
@@ -709,7 +709,7 @@ CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& 
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CreateDBCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }
@@ -830,7 +830,7 @@ CreateDBInstanceReadReplicaOutcome RDSClient::CreateDBInstanceReadReplica(const 
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, CreateDBInstanceReadReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }
@@ -3767,7 +3767,7 @@ StartDBInstanceAutomatedBackupsReplicationOutcome RDSClient::StartDBInstanceAuto
           endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
           ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
           AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, StartDBInstanceAutomatedBackupsReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
-          newRequest.SetPreSignedUrl(AwsSmithyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+          newRequest.SetPreSignedUrl(AwsLegacyClientT::GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
                                                   Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), GetServiceName(),
                                                   {{ "DestinationRegion", m_clientConfig->region }}, 3600, {}));
       }

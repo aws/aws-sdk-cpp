@@ -81,7 +81,7 @@ Aws::String ${className}::GenerateConnectAuthToken(const char* dbHostName, const
     URI uri(ss.str());
     uri.AddQueryStringParameter("Action", "connect");
     uri.AddQueryStringParameter("DBUser", dbUserName);
-    auto url = AwsSmithyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/, {}, {});
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/, {});
     Aws::Utils::StringUtils::Replace(url, "http://", "");
 
     return url;

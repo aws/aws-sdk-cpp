@@ -433,7 +433,7 @@ Aws::Utils::Outcome<String, DSQLError> DSQLClient::GenerateDBConnectAuthToken(co
     }
     URI uri(hostname);
     uri.AddQueryStringParameter("Action", "DbConnect");
-    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {}, nullptr);
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {});
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }
@@ -445,7 +445,7 @@ Aws::Utils::Outcome<String, DSQLError> DSQLClient::GenerateDBConnectAdminAuthTok
     }
     URI uri(hostname);
     uri.AddQueryStringParameter("Action", "DbConnectAdmin");
-    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {}, nullptr);
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {});
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }
