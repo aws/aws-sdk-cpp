@@ -8,6 +8,7 @@
 #include <aws/lakeformation/LakeFormationRequest.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/Resource.h>
+#include <aws/lakeformation/model/Condition.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +53,16 @@ namespace Model
     inline DeleteLakeFormationOptInRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
     inline DeleteLakeFormationOptInRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Condition& GetCondition() const{ return m_condition; }
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
+    inline DeleteLakeFormationOptInRequest& WithCondition(const Condition& value) { SetCondition(value); return *this;}
+    inline DeleteLakeFormationOptInRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
   private:
 
     DataLakePrincipal m_principal;
@@ -59,6 +70,9 @@ namespace Model
 
     Resource m_resource;
     bool m_resourceHasBeenSet = false;
+
+    Condition m_condition;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

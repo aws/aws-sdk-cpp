@@ -110,15 +110,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user status. This can be one of the following:</p> <ul> <li>
-     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
-     * User signed in with a third-party IdP.</p> </li> <li> <p>UNKNOWN - User status
-     * isn't known.</p> </li> <li> <p>RESET_REQUIRED - User is confirmed, but the user
-     * must request a code and reset their password before they can sign in.</p> </li>
-     * <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in
-     * using a temporary password, but on first sign-in, the user must change their
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <p>The user status. This can be one of the following:</p> <ul> <li> <p>
+     * <code>UNCONFIRMED</code>: User has been created but not confirmed.</p> </li>
+     * <li> <p> <code>CONFIRMED</code>: User has been confirmed.</p> </li> <li> <p>
+     * <code>EXTERNAL_PROVIDER</code>: User signed in with a third-party IdP.</p> </li>
+     * <li> <p> <code>RESET_REQUIRED</code>: User is confirmed, but the user must
+     * request a code and reset their password before they can sign in.</p> </li> <li>
+     * <p> <code>FORCE_CHANGE_PASSWORD</code>: The user is confirmed and the user can
+     * sign in using a temporary password, but on first sign-in, the user must change
+     * their password to a new value before doing anything else. </p> </li> </ul>
+     * <p>The statuses <code>ARCHIVED</code>, <code>UNKNOWN</code>, and
+     * <code>COMPROMISED</code> are no longer used.</p>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }

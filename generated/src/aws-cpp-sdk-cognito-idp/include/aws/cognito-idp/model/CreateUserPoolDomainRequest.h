@@ -91,7 +91,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">custom
      * domain</a> for your user pool. Otherwise, you can omit this parameter and use a
      * <a
-     * href="cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html">prefix
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html">prefix
      * domain</a> instead.</p> <p>When you create a custom domain, the passkey RP ID
      * defaults to the custom domain. If you had a prefix domain active, this will
      * cause passkey integration for your prefix domain to stop working due to a

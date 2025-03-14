@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A standard AWS account ID (9+ digits).</p>
+     * <p>A standard Amazon Web Services account ID (9+ digits).</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

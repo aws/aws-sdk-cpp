@@ -20,7 +20,9 @@ RegisterResourceRequest::RegisterResourceRequest() :
     m_withFederation(false),
     m_withFederationHasBeenSet(false),
     m_hybridAccessEnabled(false),
-    m_hybridAccessEnabledHasBeenSet(false)
+    m_hybridAccessEnabledHasBeenSet(false),
+    m_withPrivilegedAccess(false),
+    m_withPrivilegedAccessHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String RegisterResourceRequest::SerializePayload() const
   if(m_hybridAccessEnabledHasBeenSet)
   {
    payload.WithBool("HybridAccessEnabled", m_hybridAccessEnabled);
+
+  }
+
+  if(m_withPrivilegedAccessHasBeenSet)
+  {
+   payload.WithBool("WithPrivilegedAccess", m_withPrivilegedAccess);
 
   }
 

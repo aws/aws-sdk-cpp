@@ -25,9 +25,9 @@ namespace CognitoIdentity
    * Google, or Login with Amazon) or an Amazon Cognito user pool, and you can also
    * choose to support unauthenticated access from your app. Cognito delivers a
    * unique identifier for each user and acts as an OpenID token provider trusted by
-   * AWS Security Token Service (STS) to access temporary, limited-privilege AWS
-   * credentials.</p> <p>For a description of the authentication flow from the Amazon
-   * Cognito Developer Guide see <a
+   * Security Token Service (STS) to access temporary, limited-privilege Amazon Web
+   * Services credentials.</p> <p>For a description of the authentication flow from
+   * the Amazon Cognito Developer Guide see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Authentication
    * Flow</a>.</p> <p>For more information see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
@@ -93,14 +93,17 @@ namespace CognitoIdentity
 
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity
-         * information that is specific to your AWS account. The keys for
+         * information that is specific to your Amazon Web Services account. The keys for
          * <code>SupportedLoginProviders</code> are as follows:</p> <ul> <li> <p>Facebook:
          * <code>graph.facebook.com</code> </p> </li> <li> <p>Google:
-         * <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
+         * <code>accounts.google.com</code> </p> </li> <li> <p>Sign in With Apple:
+         * <code>appleid.apple.com</code> </p> </li> <li> <p>Amazon:
          * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
          * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
-         * <code>www.digits.com</code> </p> </li> </ul> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * <code>www.digits.com</code> </p> </li> </ul>  <p>If you don't provide
+         * a value for a parameter, Amazon Cognito sets it to its default value. </p>
+         *  <p>You must use Amazon Web Services developer credentials to call
+         * this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">AWS
          * API Reference</a></p>
          */
@@ -126,8 +129,8 @@ namespace CognitoIdentity
 
         /**
          * <p>Deletes identities from an identity pool. You can specify a list of 1-60
-         * identities that you want to delete.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * identities that you want to delete.</p> <p>You must use Amazon Web Services
+         * developer credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">AWS
          * API Reference</a></p>
          */
@@ -153,8 +156,8 @@ namespace CognitoIdentity
 
         /**
          * <p>Deletes an identity pool. Once a pool is deleted, users will not be able to
-         * authenticate with the pool.</p> <p>You must use AWS Developer credentials to
-         * call this API.</p><p><h3>See Also:</h3>   <a
+         * authenticate with the pool.</p> <p>You must use Amazon Web Services developer
+         * credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">AWS
          * API Reference</a></p>
          */
@@ -180,8 +183,9 @@ namespace CognitoIdentity
 
         /**
          * <p>Returns metadata related to the given identity, including when the identity
-         * was created and any associated linked logins.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * was created and any associated linked logins.</p> <p>You must use Amazon Web
+         * Services developer credentials to call this operation.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">AWS
          * API Reference</a></p>
          */
@@ -207,8 +211,9 @@ namespace CognitoIdentity
 
         /**
          * <p>Gets details about a particular identity pool, including the pool name, ID
-         * description, creation date, and current number of users.</p> <p>You must use AWS
-         * Developer credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * description, creation date, and current number of users.</p> <p>You must use
+         * Amazon Web Services developer credentials to call this operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">AWS
          * API Reference</a></p>
          */
@@ -235,9 +240,10 @@ namespace CognitoIdentity
         /**
          * <p>Returns credentials for the provided identity ID. Any provided logins will be
          * validated against supported login providers. If the token is for
-         * cognito-identity.amazonaws.com, it will be passed through to AWS Security Token
-         * Service with the appropriate role for the token.</p> <p>This is a public API.
-         * You do not need any credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * <code>cognito-identity.amazonaws.com</code>, it will be passed through to
+         * Security Token Service with the appropriate role for the token.</p> <p>This is a
+         * public API. You do not need any credentials to call this API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">AWS
          * API Reference</a></p>
          */
@@ -262,8 +268,8 @@ namespace CognitoIdentity
         }
 
         /**
-         * <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create
-         * an implicit linked account.</p> <p>This is a public API. You do not need any
+         * <p>Generates (or retrieves) IdentityID. Supplying multiple logins will create an
+         * implicit linked account.</p> <p>This is a public API. You do not need any
          * credentials to call this API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">AWS
          * API Reference</a></p>
@@ -289,8 +295,8 @@ namespace CognitoIdentity
         }
 
         /**
-         * <p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the roles for an identity pool.</p> <p>You must use Amazon Web Services
+         * developer credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">AWS
          * API Reference</a></p>
          */
@@ -356,8 +362,9 @@ namespace CognitoIdentity
          * identity, the <code>IdentityId</code> should be null. When you want to associate
          * a new login with an existing authenticated/unauthenticated identity, you can do
          * so by providing the existing <code>IdentityId</code>. This API will create the
-         * identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS
-         * Developer credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use
+         * Amazon Web Services developer credentials to call this operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">AWS
          * API Reference</a></p>
          */
@@ -408,8 +415,9 @@ namespace CognitoIdentity
         }
 
         /**
-         * <p>Lists the identities in an identity pool.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the identities in an identity pool.</p> <p>You must use Amazon Web
+         * Services developer credentials to call this operation.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">AWS
          * API Reference</a></p>
          */
@@ -435,8 +443,8 @@ namespace CognitoIdentity
 
         /**
          * <p>Lists all of the Cognito identity pools registered for your account.</p>
-         * <p>You must use AWS Developer credentials to call this API.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>You must use Amazon Web Services developer credentials to call this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">AWS
          * API Reference</a></p>
          */
@@ -499,15 +507,15 @@ namespace CognitoIdentity
          * as a part of the response. If you supply both,
          * <code>DeveloperUserIdentifier</code> will be matched against
          * <code>IdentityID</code>. If the values are verified against the database, the
-         * response returns both values and is the same as the request. Otherwise a
+         * response returns both values and is the same as the request. Otherwise, a
          * <code>ResourceConflictException</code> is thrown.</p> <p>
          * <code>LookupDeveloperIdentity</code> is intended for low-throughput control
          * plane operations: for example, to enable customer service to locate an identity
          * ID by username. If you are using it for higher-volume operations such as user
          * authentication, your requests are likely to be throttled.
          * <a>GetOpenIdTokenForDeveloperIdentity</a> is a better option for higher-volume
-         * operations for user authentication.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * operations for user authentication.</p> <p>You must use Amazon Web Services
+         * developer credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">AWS
          * API Reference</a></p>
          */
@@ -543,8 +551,8 @@ namespace CognitoIdentity
          * number of linked logins is limited to 20. So, the number of linked logins for
          * the source user, <code>SourceUserIdentifier</code>, and the destination user,
          * <code>DestinationUserIdentifier</code>, together should not be larger than 20.
-         * Otherwise, an exception will be thrown.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * Otherwise, an exception will be thrown.</p> <p>You must use Amazon Web Services
+         * developer credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">AWS
          * API Reference</a></p>
          */
@@ -570,8 +578,9 @@ namespace CognitoIdentity
 
         /**
          * <p>Sets the roles for an identity pool. These roles are used when making calls
-         * to <a>GetCredentialsForIdentity</a> action.</p> <p>You must use AWS Developer
-         * credentials to call this API.</p><p><h3>See Also:</h3>   <a
+         * to <a>GetCredentialsForIdentity</a> action.</p> <p>You must use Amazon Web
+         * Services developer credentials to call this operation.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">AWS
          * API Reference</a></p>
          */
@@ -665,8 +674,8 @@ namespace CognitoIdentity
          * Unlinked developer users will be considered new identities next time they are
          * seen. If, for a given Cognito identity, you remove all federated identities as
          * well as the developer user identifier, the Cognito identity becomes
-         * inaccessible.</p> <p>You must use AWS Developer credentials to call this
-         * API.</p><p><h3>See Also:</h3>   <a
+         * inaccessible.</p> <p>You must use Amazon Web Services developer credentials to
+         * call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">AWS
          * API Reference</a></p>
          */
@@ -746,8 +755,10 @@ namespace CognitoIdentity
         }
 
         /**
-         * <p>Updates an identity pool.</p> <p>You must use AWS Developer credentials to
-         * call this API.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of an identity pool.</p>  <p>If you
+         * don't provide a value for a parameter, Amazon Cognito sets it to its default
+         * value. </p>  <p>You must use Amazon Web Services developer
+         * credentials to call this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">AWS
          * API Reference</a></p>
          */

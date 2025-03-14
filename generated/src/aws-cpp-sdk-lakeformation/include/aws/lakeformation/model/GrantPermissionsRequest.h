@@ -10,6 +10,7 @@
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/Resource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lakeformation/model/Condition.h>
 #include <aws/lakeformation/model/Permission.h>
 #include <utility>
 
@@ -101,6 +102,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const Condition& GetCondition() const{ return m_condition; }
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
+    inline GrantPermissionsRequest& WithCondition(const Condition& value) { SetCondition(value); return *this;}
+    inline GrantPermissionsRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Indicates a list of the granted permissions that the principal may pass to
      * other users. These permissions may only be a subset of the permissions granted
@@ -128,6 +139,9 @@ namespace Model
 
     Aws::Vector<Permission> m_permissions;
     bool m_permissionsHasBeenSet = false;
+
+    Condition m_condition;
+    bool m_conditionHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissionsWithGrantOption;
     bool m_permissionsWithGrantOptionHasBeenSet = false;

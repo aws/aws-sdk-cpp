@@ -11,6 +11,7 @@
 #include <aws/glue/model/TargetRedshiftCatalog.h>
 #include <aws/glue/model/CatalogProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/AllowFullTableExternalDataAccessEnum.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
@@ -150,6 +151,19 @@ namespace Model
     inline CatalogInput& AddCreateDatabaseDefaultPermissions(const PrincipalPermissions& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(value); return *this; }
     inline CatalogInput& AddCreateDatabaseDefaultPermissions(PrincipalPermissions&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> Allows third-party engines to access data in Amazon S3 locations that are
+     * registered with Lake Formation. </p>
+     */
+    inline const AllowFullTableExternalDataAccessEnum& GetAllowFullTableExternalDataAccess() const{ return m_allowFullTableExternalDataAccess; }
+    inline bool AllowFullTableExternalDataAccessHasBeenSet() const { return m_allowFullTableExternalDataAccessHasBeenSet; }
+    inline void SetAllowFullTableExternalDataAccess(const AllowFullTableExternalDataAccessEnum& value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = value; }
+    inline void SetAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum&& value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = std::move(value); }
+    inline CatalogInput& WithAllowFullTableExternalDataAccess(const AllowFullTableExternalDataAccessEnum& value) { SetAllowFullTableExternalDataAccess(value); return *this;}
+    inline CatalogInput& WithAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum&& value) { SetAllowFullTableExternalDataAccess(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -172,6 +186,9 @@ namespace Model
 
     Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
     bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
+
+    AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess;
+    bool m_allowFullTableExternalDataAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -2094,7 +2094,7 @@ namespace CognitoIdentityProvider
          * longer visible or operational in your Amazon Web Services account. Amazon
          * Cognito retains deleted user pools in an inactive state for 14 days, then begins
          * a cleanup process that fully removes them from Amazon Web Services systems. In
-         * case of accidental deletion, contact Amazon Web Services Support within 14 days
+         * case of accidental deletion, contact Amazon Web ServicesSupport within 14 days
          * for restoration assistance.</p> <p>Amazon Cognito begins full deletion of all
          * resources from deleted user pools after 14 days. In the case of large user
          * pools, the cleanup process might take significant additional time before all
@@ -3642,7 +3642,7 @@ namespace CognitoIdentityProvider
          * <p>Sets up or modifies the logging configuration of a user pool. User pools can
          * export user notification logs and, when threat protection is active,
          * user-activity logs. For more information, see <a
-         * href="cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
          * user pool logs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetLogDeliveryConfiguration">AWS
          * API Reference</a></p>
