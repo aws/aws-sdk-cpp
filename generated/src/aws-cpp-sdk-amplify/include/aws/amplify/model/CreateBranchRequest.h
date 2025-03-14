@@ -129,6 +129,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+     * <p>Deployment skew protection is available to Amplify applications to eliminate
+     * version skew issues between client and servers in web applications. When you
+     * apply skew protection to a branch, you can ensure that your clients always
+     * interact with the correct version of server-side assets, regardless of when a
+     * deployment occurs. For more information about skew protection, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew
+     * protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+     */
+    inline bool GetEnableSkewProtection() const{ return m_enableSkewProtection; }
+    inline bool EnableSkewProtectionHasBeenSet() const { return m_enableSkewProtectionHasBeenSet; }
+    inline void SetEnableSkewProtection(bool value) { m_enableSkewProtectionHasBeenSet = true; m_enableSkewProtection = value; }
+    inline CreateBranchRequest& WithEnableSkewProtection(bool value) { SetEnableSkewProtection(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The environment variables for the branch. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
@@ -309,7 +326,7 @@ namespace Model
      * SSR app. The SSR Compute role allows the Amplify Hosting compute service to
      * securely access specific Amazon Web Services resources based on the role's
      * permissions. For more information about the SSR Compute role, see <a
-     * href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding
      * an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
      */
     inline const Aws::String& GetComputeRoleArn() const{ return m_computeRoleArn; }
@@ -343,6 +360,9 @@ namespace Model
 
     bool m_enableAutoBuild;
     bool m_enableAutoBuildHasBeenSet = false;
+
+    bool m_enableSkewProtection;
+    bool m_enableSkewProtectionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet = false;

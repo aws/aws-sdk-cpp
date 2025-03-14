@@ -25,7 +25,8 @@ namespace Model
     WORKFLOW_NAME,
     TAG_NAME,
     RELEASE_NAME,
-    REPOSITORY_NAME
+    REPOSITORY_NAME,
+    ORGANIZATION_NAME
   };
 
 namespace WebhookFilterTypeMapper

@@ -44,6 +44,8 @@
 #include <aws/mediapackagev2/model/ListTagsForResourceRequest.h>
 #include <aws/mediapackagev2/model/PutChannelPolicyRequest.h>
 #include <aws/mediapackagev2/model/PutOriginEndpointPolicyRequest.h>
+#include <aws/mediapackagev2/model/ResetChannelStateRequest.h>
+#include <aws/mediapackagev2/model/ResetOriginEndpointStateRequest.h>
 #include <aws/mediapackagev2/model/TagResourceRequest.h>
 #include <aws/mediapackagev2/model/UntagResourceRequest.h>
 #include <aws/mediapackagev2/model/UpdateChannelRequest.h>
@@ -1120,6 +1122,95 @@ PutOriginEndpointPolicyOutcome Mediapackagev2Client::PutOriginEndpointPolicy(con
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginEndpointName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
       return PutOriginEndpointPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ResetChannelStateOutcome Mediapackagev2Client::ResetChannelState(const ResetChannelStateRequest& request) const
+{
+  AWS_OPERATION_GUARD(ResetChannelState);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetChannelState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ChannelGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetChannelState", "Required field: ChannelGroupName, is not set");
+    return ResetChannelStateOutcome(Aws::Client::AWSError<Mediapackagev2Errors>(Mediapackagev2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelGroupName]", false));
+  }
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetChannelState", "Required field: ChannelName, is not set");
+    return ResetChannelStateOutcome(Aws::Client::AWSError<Mediapackagev2Errors>(Mediapackagev2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ResetChannelState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ResetChannelState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ResetChannelState",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ResetChannelStateOutcome>(
+    [&]()-> ResetChannelStateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetChannelState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channelGroup/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelGroupName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channel/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/reset");
+      return ResetChannelStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ResetOriginEndpointStateOutcome Mediapackagev2Client::ResetOriginEndpointState(const ResetOriginEndpointStateRequest& request) const
+{
+  AWS_OPERATION_GUARD(ResetOriginEndpointState);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetOriginEndpointState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ChannelGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetOriginEndpointState", "Required field: ChannelGroupName, is not set");
+    return ResetOriginEndpointStateOutcome(Aws::Client::AWSError<Mediapackagev2Errors>(Mediapackagev2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelGroupName]", false));
+  }
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetOriginEndpointState", "Required field: ChannelName, is not set");
+    return ResetOriginEndpointStateOutcome(Aws::Client::AWSError<Mediapackagev2Errors>(Mediapackagev2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
+  if (!request.OriginEndpointNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetOriginEndpointState", "Required field: OriginEndpointName, is not set");
+    return ResetOriginEndpointStateOutcome(Aws::Client::AWSError<Mediapackagev2Errors>(Mediapackagev2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OriginEndpointName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ResetOriginEndpointState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ResetOriginEndpointState, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ResetOriginEndpointState",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ResetOriginEndpointStateOutcome>(
+    [&]()-> ResetOriginEndpointStateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetOriginEndpointState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channelGroup/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelGroupName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/channel/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/originEndpoint/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginEndpointName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/reset");
+      return ResetOriginEndpointStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

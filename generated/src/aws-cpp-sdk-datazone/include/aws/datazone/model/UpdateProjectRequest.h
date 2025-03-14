@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/EnvironmentDeploymentDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,35 @@ namespace Model
     inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The project profile version to which the project should be updated. You can
+     * only specify the following string for this parameter: <code>latest</code>.</p>
+     */
+    inline const Aws::String& GetProjectProfileVersion() const{ return m_projectProfileVersion; }
+    inline bool ProjectProfileVersionHasBeenSet() const { return m_projectProfileVersionHasBeenSet; }
+    inline void SetProjectProfileVersion(const Aws::String& value) { m_projectProfileVersionHasBeenSet = true; m_projectProfileVersion = value; }
+    inline void SetProjectProfileVersion(Aws::String&& value) { m_projectProfileVersionHasBeenSet = true; m_projectProfileVersion = std::move(value); }
+    inline void SetProjectProfileVersion(const char* value) { m_projectProfileVersionHasBeenSet = true; m_projectProfileVersion.assign(value); }
+    inline UpdateProjectRequest& WithProjectProfileVersion(const Aws::String& value) { SetProjectProfileVersion(value); return *this;}
+    inline UpdateProjectRequest& WithProjectProfileVersion(Aws::String&& value) { SetProjectProfileVersion(std::move(value)); return *this;}
+    inline UpdateProjectRequest& WithProjectProfileVersion(const char* value) { SetProjectProfileVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user parameters of the project.</p>
+     */
+    inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const{ return m_userParameters; }
+    inline bool UserParametersHasBeenSet() const { return m_userParametersHasBeenSet; }
+    inline void SetUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { m_userParametersHasBeenSet = true; m_userParameters = value; }
+    inline void SetUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { m_userParametersHasBeenSet = true; m_userParameters = std::move(value); }
+    inline UpdateProjectRequest& WithUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { SetUserParameters(value); return *this;}
+    inline UpdateProjectRequest& WithUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { SetUserParameters(std::move(value)); return *this;}
+    inline UpdateProjectRequest& AddUserParameters(const EnvironmentConfigurationUserParameter& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(value); return *this; }
+    inline UpdateProjectRequest& AddUserParameters(EnvironmentConfigurationUserParameter&& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_description;
@@ -137,6 +167,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_projectProfileVersion;
+    bool m_projectProfileVersionHasBeenSet = false;
+
+    Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+    bool m_userParametersHasBeenSet = false;
   };
 
 } // namespace Model

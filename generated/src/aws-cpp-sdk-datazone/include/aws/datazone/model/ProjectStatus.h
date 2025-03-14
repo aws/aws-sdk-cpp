@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     ACTIVE,
     DELETING,
-    DELETE_FAILED
+    DELETE_FAILED,
+    UPDATING,
+    UPDATE_FAILED
   };
 
 namespace ProjectStatusMapper

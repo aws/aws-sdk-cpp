@@ -1474,24 +1474,42 @@ namespace CloudWatchLogs
 
         /**
          * <p>Lists log events from the specified log group. You can list all the log
-         * events or filter the results using a filter pattern, a time range, and the name
-         * of the log stream.</p> <p>You must have the <code>logs:FilterLogEvents</code>
-         * permission to perform this operation.</p> <p>You can specify the log group to
-         * search by using either <code>logGroupIdentifier</code> or
-         * <code>logGroupName</code>. You must include one of these two parameters, but you
-         * can't include both. </p> <p>By default, this operation returns as many log
-         * events as can fit in 1 MB (up to 10,000 log events) or all the events found
-         * within the specified time range. If the results include a token, that means
-         * there are more log events available. You can get additional results by
-         * specifying the token in a subsequent call. This operation can return empty
-         * results while there are more log events available through the token.</p> <p>The
-         * returned log events are sorted by event timestamp, the timestamp when the event
-         * was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code>
-         * request.</p> <p>If you are using CloudWatch cross-account observability, you can
-         * use this operation in a monitoring account and view data from the linked source
-         * accounts. For more information, see <a
+         * events or filter the results using one or more of the following:</p> <ul> <li>
+         * <p>A filter pattern</p> </li> <li> <p>A time range</p> </li> <li> <p>The log
+         * stream name, or a log stream name prefix that matches mutltiple log streams</p>
+         * </li> </ul> <p>You must have the <code>logs:FilterLogEvents</code> permission to
+         * perform this operation.</p> <p>You can specify the log group to search by using
+         * either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must
+         * include one of these two parameters, but you can't include both. </p> <p>
+         * <code>FilterLogEvents</code> is a paginated operation. Each page returned can
+         * contain up to 1 MB of log events or up to 10,000 log events. A returned page
+         * might only be partially full, or even empty. For example, if the result of a
+         * query would return 15,000 log events, the first page isn't guaranteed to have
+         * 10,000 log events even if they all fit into 1 MB.</p> <p>Partially full or empty
+         * pages don't necessarily mean that pagination is finished. If the results include
+         * a <code>nextToken</code>, there might be more log events available. You can
+         * return these additional log events by providing the nextToken in a subsequent
+         * <code>FilterLogEvents</code> operation. If the results don't include a
+         * <code>nextToken</code>, then pagination is finished. </p>  <p>If you set
+         * <code>startFromHead</code> to <code>true</code> and you don’t include
+         * <code>endTime</code> in your request, you can end up in a situation where the
+         * pagination doesn't terminate. This can happen when the new log events are being
+         * added to the target log streams faster than they are being read. This situation
+         * is a good use case for the CloudWatch Logs <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Live
+         * Tail</a> feature.</p>  <p>The returned log events are sorted by event
+         * timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the
+         * ID of the <code>PutLogEvents</code> request.</p> <p>If you are using CloudWatch
+         * cross-account observability, you can use this operation in a monitoring account
+         * and view data from the linked source accounts. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
-         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
+         * cross-account observability</a>.</p>  <p>If you are using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">log
+         * transformation</a>, the <code>FilterLogEvents</code> operation returns only the
+         * original versions of log events, before they were transformed. To view the
+         * transformed versions, you must use a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">CloudWatch
+         * Logs query.</a> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">AWS
          * API Reference</a></p>
          */
@@ -1689,8 +1707,8 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Retrieves information about the log anomaly detector that you
-         * specify.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the log anomaly detector that you specify. The
+         * KMS key ARN detected is valid.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">AWS
          * API Reference</a></p>
          */
@@ -1716,18 +1734,37 @@ namespace CloudWatchLogs
 
         /**
          * <p>Lists log events from the specified log stream. You can list all of the log
-         * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1MB (up to 10,000 log
-         * events). You can get additional log events by specifying one of the tokens in a
-         * subsequent call. This operation can return empty results while there are more
-         * log events available through the token.</p> <p>If you are using CloudWatch
-         * cross-account observability, you can use this operation in a monitoring account
-         * and view data from the linked source accounts. For more information, see <a
+         * events or filter using a time range.</p> <p> <code>GetLogEvents</code> is a
+         * paginated operation. Each page returned can contain up to 1 MB of log events or
+         * up to 10,000 log events. A returned page might only be partially full, or even
+         * empty. For example, if the result of a query would return 15,000 log events, the
+         * first page isn't guaranteed to have 10,000 log events even if they all fit into
+         * 1 MB.</p> <p>Partially full or empty pages don't necessarily mean that
+         * pagination is finished. As long as the <code>nextBackwardToken</code> or
+         * <code>nextForwardToken</code> returned is NOT equal to the
+         * <code>nextToken</code> that you passed into the API call, there might be more
+         * log events available. The token that you use depends on the direction you want
+         * to move in along the log stream. The returned tokens are never null.</p> 
+         * <p>If you set <code>startFromHead</code> to <code>true</code> and you don’t
+         * include <code>endTime</code> in your request, you can end up in a situation
+         * where the pagination doesn't terminate. This can happen when the new log events
+         * are being added to the target log streams faster than they are being read. This
+         * situation is a good use case for the CloudWatch Logs <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Live
+         * Tail</a> feature.</p>  <p>If you are using CloudWatch cross-account
+         * observability, you can use this operation in a monitoring account and view data
+         * from the linked source accounts. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
          * cross-account observability</a>.</p> <p>You can specify the log group to search
          * by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>.
-         * You must include one of these two parameters, but you can't include both.
-         * </p><p><h3>See Also:</h3>   <a
+         * You must include one of these two parameters, but you can't include both. </p>
+         *  <p>If you are using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">log
+         * transformation</a>, the <code>GetLogEvents</code> operation returns only the
+         * original versions of log events, before they were transformed. To view the
+         * transformed versions, you must use a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">CloudWatch
+         * Logs query.</a> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
          * API Reference</a></p>
          */

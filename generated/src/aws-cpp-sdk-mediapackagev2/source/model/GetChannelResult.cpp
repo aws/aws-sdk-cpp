@@ -61,6 +61,12 @@ GetChannelResult& GetChannelResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("ResetAt"))
+  {
+    m_resetAt = jsonValue.GetDouble("ResetAt");
+
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");

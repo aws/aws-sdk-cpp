@@ -66,7 +66,8 @@ namespace Model
     ///@{
     /**
      * <p>The token to use when requesting the next set of items. The token expires
-     * after 24 hours.</p>
+     * after 24 hours.</p> <p>If the results don't include a <code>nextToken</code>,
+     * then pagination is finished. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

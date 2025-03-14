@@ -160,6 +160,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration ID of the environment.</p>
+     */
+    inline const Aws::String& GetEnvironmentConfigurationId() const{ return m_environmentConfigurationId; }
+    inline void SetEnvironmentConfigurationId(const Aws::String& value) { m_environmentConfigurationId = value; }
+    inline void SetEnvironmentConfigurationId(Aws::String&& value) { m_environmentConfigurationId = std::move(value); }
+    inline void SetEnvironmentConfigurationId(const char* value) { m_environmentConfigurationId.assign(value); }
+    inline CreateEnvironmentResult& WithEnvironmentConfigurationId(const Aws::String& value) { SetEnvironmentConfigurationId(value); return *this;}
+    inline CreateEnvironmentResult& WithEnvironmentConfigurationId(Aws::String&& value) { SetEnvironmentConfigurationId(std::move(value)); return *this;}
+    inline CreateEnvironmentResult& WithEnvironmentConfigurationId(const char* value) { SetEnvironmentConfigurationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the environment profile with which this Amazon DataZone environment
      * was created.</p>
      */
@@ -338,6 +351,8 @@ namespace Model
     Aws::Vector<ConfigurableEnvironmentAction> m_environmentActions;
 
     Aws::String m_environmentBlueprintId;
+
+    Aws::String m_environmentConfigurationId;
 
     Aws::String m_environmentProfileId;
 

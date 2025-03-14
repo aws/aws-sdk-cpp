@@ -132,6 +132,21 @@ namespace Model
     inline CreateLowLatencyHlsManifestConfiguration& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
     inline CreateLowLatencyHlsManifestConfiguration& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>When enabled, MediaPackage URL-encodes the query string for API requests for
+     * LL-HLS child manifests to comply with Amazon Web Services Signature Version 4
+     * (SigV4) signature signing protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon
+     * Web Services Signature Version 4 for API requests</a> in <i>Identity and Access
+     * Management User Guide</i>.</p>
+     */
+    inline bool GetUrlEncodeChildManifest() const{ return m_urlEncodeChildManifest; }
+    inline bool UrlEncodeChildManifestHasBeenSet() const { return m_urlEncodeChildManifestHasBeenSet; }
+    inline void SetUrlEncodeChildManifest(bool value) { m_urlEncodeChildManifestHasBeenSet = true; m_urlEncodeChildManifest = value; }
+    inline CreateLowLatencyHlsManifestConfiguration& WithUrlEncodeChildManifest(bool value) { SetUrlEncodeChildManifest(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_manifestName;
@@ -154,6 +169,9 @@ namespace Model
 
     FilterConfiguration m_filterConfiguration;
     bool m_filterConfigurationHasBeenSet = false;
+
+    bool m_urlEncodeChildManifest;
+    bool m_urlEncodeChildManifestHasBeenSet = false;
   };
 
 } // namespace Model

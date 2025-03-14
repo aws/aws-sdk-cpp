@@ -23,7 +23,8 @@ AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration() :
     m_mediaTypesHasBeenSet(false),
     m_thumbnailConfigurationHasBeenSet(false),
     m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false)
+    m_recordingReconnectWindowSecondsHasBeenSet(false),
+    m_hlsConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,13 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
     m_recordingReconnectWindowSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hlsConfiguration"))
+  {
+    m_hlsConfiguration = jsonValue.GetObject("hlsConfiguration");
+
+    m_hlsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +107,12 @@ JsonValue AutoParticipantRecordingConfiguration::Jsonize() const
   if(m_recordingReconnectWindowSecondsHasBeenSet)
   {
    payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
+
+  }
+
+  if(m_hlsConfigurationHasBeenSet)
+  {
+   payload.WithObject("hlsConfiguration", m_hlsConfiguration.Jsonize());
 
   }
 

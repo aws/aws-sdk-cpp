@@ -41,6 +41,8 @@
 #include <aws/mediapackagev2/model/ListTagsForResourceResult.h>
 #include <aws/mediapackagev2/model/PutChannelPolicyResult.h>
 #include <aws/mediapackagev2/model/PutOriginEndpointPolicyResult.h>
+#include <aws/mediapackagev2/model/ResetChannelStateResult.h>
+#include <aws/mediapackagev2/model/ResetOriginEndpointStateResult.h>
 #include <aws/mediapackagev2/model/UpdateChannelResult.h>
 #include <aws/mediapackagev2/model/UpdateChannelGroupResult.h>
 #include <aws/mediapackagev2/model/UpdateOriginEndpointResult.h>
@@ -109,6 +111,8 @@ namespace Aws
       class ListTagsForResourceRequest;
       class PutChannelPolicyRequest;
       class PutOriginEndpointPolicyRequest;
+      class ResetChannelStateRequest;
+      class ResetOriginEndpointStateRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateChannelRequest;
@@ -140,6 +144,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, Mediapackagev2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutChannelPolicyResult, Mediapackagev2Error> PutChannelPolicyOutcome;
       typedef Aws::Utils::Outcome<PutOriginEndpointPolicyResult, Mediapackagev2Error> PutOriginEndpointPolicyOutcome;
+      typedef Aws::Utils::Outcome<ResetChannelStateResult, Mediapackagev2Error> ResetChannelStateOutcome;
+      typedef Aws::Utils::Outcome<ResetOriginEndpointStateResult, Mediapackagev2Error> ResetOriginEndpointStateOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, Mediapackagev2Error> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, Mediapackagev2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, Mediapackagev2Error> UpdateChannelOutcome;
@@ -171,6 +177,8 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutChannelPolicyOutcome> PutChannelPolicyOutcomeCallable;
       typedef std::future<PutOriginEndpointPolicyOutcome> PutOriginEndpointPolicyOutcomeCallable;
+      typedef std::future<ResetChannelStateOutcome> ResetChannelStateOutcomeCallable;
+      typedef std::future<ResetOriginEndpointStateOutcome> ResetOriginEndpointStateOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
@@ -205,6 +213,8 @@ namespace Aws
     typedef std::function<void(const Mediapackagev2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::PutChannelPolicyRequest&, const Model::PutChannelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelPolicyResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::PutOriginEndpointPolicyRequest&, const Model::PutOriginEndpointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOriginEndpointPolicyResponseReceivedHandler;
+    typedef std::function<void(const Mediapackagev2Client*, const Model::ResetChannelStateRequest&, const Model::ResetChannelStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetChannelStateResponseReceivedHandler;
+    typedef std::function<void(const Mediapackagev2Client*, const Model::ResetOriginEndpointStateRequest&, const Model::ResetOriginEndpointStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetOriginEndpointStateResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;

@@ -60,10 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>The instance tags associated with the event window. Any instances associated
-     * with the tags will be associated with the event window.</p> <p>Note that while
-     * you can't create tag keys beginning with <code>aws:</code>, you can specify
-     * existing Amazon Web Services managed tag keys (with the <code>aws:</code>
-     * prefix) when specifying them as targets to associate with the event window.</p>
+     * with the tags will be associated with the event window.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
