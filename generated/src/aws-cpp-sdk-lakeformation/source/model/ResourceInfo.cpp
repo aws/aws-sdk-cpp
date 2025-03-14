@@ -25,7 +25,9 @@ ResourceInfo::ResourceInfo() :
     m_withFederation(false),
     m_withFederationHasBeenSet(false),
     m_hybridAccessEnabled(false),
-    m_hybridAccessEnabledHasBeenSet(false)
+    m_hybridAccessEnabledHasBeenSet(false),
+    m_withPrivilegedAccess(false),
+    m_withPrivilegedAccessHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,13 @@ ResourceInfo& ResourceInfo::operator =(JsonView jsonValue)
     m_hybridAccessEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WithPrivilegedAccess"))
+  {
+    m_withPrivilegedAccess = jsonValue.GetBool("WithPrivilegedAccess");
+
+    m_withPrivilegedAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,12 @@ JsonValue ResourceInfo::Jsonize() const
   if(m_hybridAccessEnabledHasBeenSet)
   {
    payload.WithBool("HybridAccessEnabled", m_hybridAccessEnabled);
+
+  }
+
+  if(m_withPrivilegedAccessHasBeenSet)
+  {
+   payload.WithBool("WithPrivilegedAccess", m_withPrivilegedAccess);
 
   }
 

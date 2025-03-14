@@ -96,6 +96,17 @@ namespace Model
     inline void SetHybridAccessEnabled(bool value) { m_hybridAccessEnabledHasBeenSet = true; m_hybridAccessEnabled = value; }
     inline RegisterResourceRequest& WithHybridAccessEnabled(bool value) { SetHybridAccessEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Grants the calling principal the permissions to perform all supported Lake
+     * Formation operations on the registered data location. </p>
+     */
+    inline bool GetWithPrivilegedAccess() const{ return m_withPrivilegedAccess; }
+    inline bool WithPrivilegedAccessHasBeenSet() const { return m_withPrivilegedAccessHasBeenSet; }
+    inline void SetWithPrivilegedAccess(bool value) { m_withPrivilegedAccessHasBeenSet = true; m_withPrivilegedAccess = value; }
+    inline RegisterResourceRequest& WithWithPrivilegedAccess(bool value) { SetWithPrivilegedAccess(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_resourceArn;
@@ -112,6 +123,9 @@ namespace Model
 
     bool m_hybridAccessEnabled;
     bool m_hybridAccessEnabledHasBeenSet = false;
+
+    bool m_withPrivilegedAccess;
+    bool m_withPrivilegedAccessHasBeenSet = false;
   };
 
 } // namespace Model

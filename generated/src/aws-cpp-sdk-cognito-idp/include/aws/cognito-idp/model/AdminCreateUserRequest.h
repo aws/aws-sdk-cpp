@@ -100,14 +100,15 @@ namespace Model
      * <code>email_verified</code> and <code>phone_number_verified</code> attributes to
      * <code>true</code>. The following conditions apply:</p> <dl> <dt>email</dt> <dd>
      * <p>The email address where you want the user to receive their confirmation code
-     * and username. You must provide a value for the <code>email</code> when you want
-     * to set <code>email_verified</code> to <code>true</code>, or if you set
+     * and username. You must provide a value for <code>email</code> when you want to
+     * set <code>email_verified</code> to <code>true</code>, or if you set
      * <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
      * </dd> <dt>phone_number</dt> <dd> <p>The phone number where you want the user to
-     * receive their confirmation code and username. You must provide a value for the
-     * <code>email</code> when you want to set <code>phone_number</code> to
-     * <code>true</code>, or if you set <code>SMS</code> in the
-     * <code>DesiredDeliveryMediums</code> parameter.</p> </dd> </dl>
+     * receive their confirmation code and username. You must provide a value for
+     * <code>phone_number</code> when you want to set
+     * <code>phone_number_verified</code> to <code>true</code>, or if you set
+     * <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p> </dd>
+     * </dl>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }

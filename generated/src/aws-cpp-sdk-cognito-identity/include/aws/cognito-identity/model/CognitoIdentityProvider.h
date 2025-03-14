@@ -73,9 +73,9 @@ namespace Model
      * token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an
      * identity pool, that identity pool will check with the integrated user pools to
      * make sure that the user has not been globally signed out or deleted before the
-     * identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If
-     * the user is signed out or deleted, the identity pool will return a 400 Not
-     * Authorized error.</p>
+     * identity pool provides an OIDC token or Amazon Web Services credentials for the
+     * user.</p> <p>If the user is signed out or deleted, the identity pool will return
+     * a 400 Not Authorized error.</p>
      */
     inline bool GetServerSideTokenCheck() const{ return m_serverSideTokenCheck; }
     inline bool ServerSideTokenCheckHasBeenSet() const { return m_serverSideTokenCheckHasBeenSet; }

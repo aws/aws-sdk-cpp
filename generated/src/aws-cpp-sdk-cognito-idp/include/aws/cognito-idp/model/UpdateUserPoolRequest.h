@@ -257,7 +257,9 @@ namespace Model
      * with user devices in your user pool</a>. A null value indicates that you have
      * deactivated device remembering in your user pool.</p>  <p>When you provide
      * a value for any <code>DeviceConfiguration</code> field, you activate the Amazon
-     * Cognito device-remembering feature. For more infor</p> 
+     * Cognito device-remembering feature. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with devices</a>.</p> 
      */
     inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }

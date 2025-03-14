@@ -17,6 +17,7 @@ RevokePermissionsRequest::RevokePermissionsRequest() :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
+    m_conditionHasBeenSet(false),
     m_permissionsWithGrantOptionHasBeenSet(false)
 {
 }
@@ -51,6 +52,12 @@ Aws::String RevokePermissionsRequest::SerializePayload() const
      permissionsJsonList[permissionsIndex].AsString(PermissionMapper::GetNameForPermission(m_permissions[permissionsIndex]));
    }
    payload.WithArray("Permissions", std::move(permissionsJsonList));
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 
