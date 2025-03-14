@@ -31,7 +31,7 @@ Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${className}::${pr
     uri.AddQueryStringParameter("${arg.paramterName}", "${arg.hardcodedValue}");
 #end
 #end
-    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, ${presigner.regionVarName}.c_str(), GetServiceName(), expiresIn, {}, nullptr);
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, ${presigner.regionVarName}.c_str(), GetServiceName(), expiresIn, {});
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }

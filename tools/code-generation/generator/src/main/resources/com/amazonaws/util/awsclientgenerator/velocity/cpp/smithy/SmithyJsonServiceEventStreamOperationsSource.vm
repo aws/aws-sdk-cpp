@@ -4,7 +4,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   AWS_ASYNC_OPERATION_GUARD(${operation.name});
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceClientOperationsEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
