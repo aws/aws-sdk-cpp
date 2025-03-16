@@ -54,7 +54,8 @@ namespace Model
     /**
      * <p>User preferences for time-based one-time password (TOTP) MFA. Activates or
      * deactivates TOTP MFA and sets it as the preferred MFA method when multiple
-     * methods are available.</p>
+     * methods are available. Users must register a TOTP authenticator before they set
+     * this as their preferred MFA method.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateLakeFormationOptInRequest::CreateLakeFormationOptInRequest() : 
     m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+    m_resourceHasBeenSet(false),
+    m_conditionHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String CreateLakeFormationOptInRequest::SerializePayload() const
   if(m_resourceHasBeenSet)
   {
    payload.WithObject("Resource", m_resource.Jsonize());
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 

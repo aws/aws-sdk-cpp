@@ -23,6 +23,7 @@ BatchPermissionsRequestEntry::BatchPermissionsRequestEntry() :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
+    m_conditionHasBeenSet(false),
     m_permissionsWithGrantOptionHasBeenSet(false)
 {
 }
@@ -64,6 +65,13 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
       m_permissions.push_back(PermissionMapper::GetPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
     }
     m_permissionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Condition"))
+  {
+    m_condition = jsonValue.GetObject("Condition");
+
+    m_conditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PermissionsWithGrantOption"))
@@ -109,6 +117,12 @@ JsonValue BatchPermissionsRequestEntry::Jsonize() const
      permissionsJsonList[permissionsIndex].AsString(PermissionMapper::GetNameForPermission(m_permissions[permissionsIndex]));
    }
    payload.WithArray("Permissions", std::move(permissionsJsonList));
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 

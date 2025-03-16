@@ -30,7 +30,9 @@ Catalog::Catalog() :
     m_federatedCatalogHasBeenSet(false),
     m_catalogPropertiesHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
-    m_createDatabaseDefaultPermissionsHasBeenSet(false)
+    m_createDatabaseDefaultPermissionsHasBeenSet(false),
+    m_allowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum::NOT_SET),
+    m_allowFullTableExternalDataAccessHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,13 @@ Catalog& Catalog::operator =(JsonView jsonValue)
     m_createDatabaseDefaultPermissionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllowFullTableExternalDataAccess"))
+  {
+    m_allowFullTableExternalDataAccess = AllowFullTableExternalDataAccessEnumMapper::GetAllowFullTableExternalDataAccessEnumForName(jsonValue.GetString("AllowFullTableExternalDataAccess"));
+
+    m_allowFullTableExternalDataAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +234,11 @@ JsonValue Catalog::Jsonize() const
    }
    payload.WithArray("CreateDatabaseDefaultPermissions", std::move(createDatabaseDefaultPermissionsJsonList));
 
+  }
+
+  if(m_allowFullTableExternalDataAccessHasBeenSet)
+  {
+   payload.WithString("AllowFullTableExternalDataAccess", AllowFullTableExternalDataAccessEnumMapper::GetNameForAllowFullTableExternalDataAccessEnum(m_allowFullTableExternalDataAccess));
   }
 
   return payload;
