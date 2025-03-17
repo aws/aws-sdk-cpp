@@ -6,39 +6,28 @@
 #pragma once
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
-#include <aws/docdb/DocDBErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DocDB
 {
-  AWS_DOCDB_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon DocumentDB is a fast, reliable, and fully managed database service.
    * Amazon DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible
    * databases in the cloud. With Amazon DocumentDB, you can run the same application
    * code and use the same drivers and tools that you use with MongoDB.</p>
    */
-  class AWS_DOCDB_API DocDBClient : Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>,
-    smithy::client::AwsSmithyClientT<Aws::DocDB::SERVICE_NAME,
-      Aws::DocDB::DocDBClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DocDBEndpointProviderBase,
-      smithy::client::XmlOutcomeSerializer,
-      smithy::client::XmlOutcome,
-      Aws::Client::DocDBErrorMarshaller>
+  class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>
   {
     public:
+      typedef Aws::Client::AWSXMLClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "DocDB"; }
 
       typedef DocDBClientConfiguration ClientConfigurationType;
       typedef DocDBEndpointProvider EndpointProviderType;
@@ -91,10 +80,12 @@ namespace DocDB
         /* End of legacy constructors due deprecation */
         virtual ~DocDBClient();
 
-        /**
+
+       /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
 
         /**
          * <p>Adds a source identifier to an existing event notification
@@ -1672,11 +1663,14 @@ namespace DocDB
         }
 
 
-      void OverrideEndpoint(const Aws::String& endpoint);
-      std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
-    private:
-      friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>;
+        void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
+  private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>;
+        void init(const DocDBClientConfiguration& clientConfiguration);
 
+        DocDBClientConfiguration m_clientConfiguration;
+        std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DocDB

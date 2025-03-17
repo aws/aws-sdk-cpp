@@ -6,19 +6,16 @@
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
-#include <aws/monitoring/CloudWatchErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudWatch
 {
-  AWS_CLOUDWATCH_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services)
    * resources and the applications you run on Amazon Web Services in real time. You
@@ -34,20 +31,12 @@ namespace CloudWatch
    * system-wide visibility into resource utilization, application performance, and
    * operational health.</p>
    */
-  class AWS_CLOUDWATCH_API CloudWatchClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>,
-    smithy::client::AwsSmithyClientT<Aws::CloudWatch::SERVICE_NAME,
-      Aws::CloudWatch::CloudWatchClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CloudWatchEndpointProviderBase,
-      smithy::client::XmlOutcomeSerializer,
-      smithy::client::XmlOutcome,
-      Aws::Client::CloudWatchErrorMarshaller>
+  class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>
   {
     public:
+      typedef Aws::Client::AWSXMLClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CloudWatch"; }
 
       typedef CloudWatchClientConfiguration ClientConfigurationType;
       typedef CloudWatchEndpointProvider EndpointProviderType;
@@ -100,10 +89,12 @@ namespace CloudWatch
         /* End of legacy constructors due deprecation */
         virtual ~CloudWatchClient();
 
-        /**
+
+       /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
 
         /**
          * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
@@ -1495,11 +1486,14 @@ namespace CloudWatch
         }
 
 
-      void OverrideEndpoint(const Aws::String& endpoint);
-      std::shared_ptr<CloudWatchEndpointProviderBase>& accessEndpointProvider();
-    private:
-      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>;
+        void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<CloudWatchEndpointProviderBase>& accessEndpointProvider();
+  private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>;
+        void init(const CloudWatchClientConfiguration& clientConfiguration);
 
+        CloudWatchClientConfiguration m_clientConfiguration;
+        std::shared_ptr<CloudWatchEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatch
