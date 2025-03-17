@@ -19,13 +19,23 @@ GetStaticMapRequest::GetStaticMapRequest() :
     m_boundingBoxHasBeenSet(false),
     m_boundedPositionsHasBeenSet(false),
     m_centerHasBeenSet(false),
+    m_colorScheme(ColorScheme::NOT_SET),
+    m_colorSchemeHasBeenSet(false),
     m_compactOverlayHasBeenSet(false),
+    m_cropLabels(false),
+    m_cropLabelsHasBeenSet(false),
     m_geoJsonOverlayHasBeenSet(false),
     m_height(0),
     m_heightHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_labelSize(LabelSize::NOT_SET),
+    m_labelSizeHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_padding(0),
     m_paddingHasBeenSet(false),
+    m_politicalViewHasBeenSet(false),
+    m_pointsOfInterests(MapFeatureMode::NOT_SET),
+    m_pointsOfInterestsHasBeenSet(false),
     m_radius(0),
     m_radiusHasBeenSet(false),
     m_fileNameHasBeenSet(false),
@@ -69,10 +79,24 @@ void GetStaticMapRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_colorSchemeHasBeenSet)
+    {
+      ss << ColorSchemeMapper::GetNameForColorScheme(m_colorScheme);
+      uri.AddQueryStringParameter("color-scheme", ss.str());
+      ss.str("");
+    }
+
     if(m_compactOverlayHasBeenSet)
     {
       ss << m_compactOverlay;
       uri.AddQueryStringParameter("compact-overlay", ss.str());
+      ss.str("");
+    }
+
+    if(m_cropLabelsHasBeenSet)
+    {
+      ss << m_cropLabels;
+      uri.AddQueryStringParameter("crop-labels", ss.str());
       ss.str("");
     }
 
@@ -97,10 +121,38 @@ void GetStaticMapRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_labelSizeHasBeenSet)
+    {
+      ss << LabelSizeMapper::GetNameForLabelSize(m_labelSize);
+      uri.AddQueryStringParameter("label-size", ss.str());
+      ss.str("");
+    }
+
+    if(m_languageHasBeenSet)
+    {
+      ss << m_language;
+      uri.AddQueryStringParameter("lang", ss.str());
+      ss.str("");
+    }
+
     if(m_paddingHasBeenSet)
     {
       ss << m_padding;
       uri.AddQueryStringParameter("padding", ss.str());
+      ss.str("");
+    }
+
+    if(m_politicalViewHasBeenSet)
+    {
+      ss << m_politicalView;
+      uri.AddQueryStringParameter("political-view", ss.str());
+      ss.str("");
+    }
+
+    if(m_pointsOfInterestsHasBeenSet)
+    {
+      ss << MapFeatureModeMapper::GetNameForMapFeatureMode(m_pointsOfInterests);
+      uri.AddQueryStringParameter("pois", ss.str());
       ss.str("");
     }
 

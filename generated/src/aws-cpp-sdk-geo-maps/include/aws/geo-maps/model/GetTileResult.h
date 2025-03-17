@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The blob represents a vector tile in <code>mvt</code> format for the
-     * <code>GetTile</code> API.</p>
+     * <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an
+     * image format.</p>
      */
     inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
     inline void ReplaceBody(Aws::IOStream* body) { m_blob = Aws::Utils::Stream::ResponseStream(body); }

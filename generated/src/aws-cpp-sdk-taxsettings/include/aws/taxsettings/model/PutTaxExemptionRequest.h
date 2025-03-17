@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The exemption type. </p>
+     * <p>The exemption type. Use the supported tax exemption type description. </p>
      */
     inline const Aws::String& GetExemptionType() const{ return m_exemptionType; }
     inline bool ExemptionTypeHasBeenSet() const { return m_exemptionTypeHasBeenSet; }

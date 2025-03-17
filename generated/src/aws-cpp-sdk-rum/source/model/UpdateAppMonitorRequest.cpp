@@ -17,7 +17,9 @@ UpdateAppMonitorRequest::UpdateAppMonitorRequest() :
     m_customEventsHasBeenSet(false),
     m_cwLogEnabled(false),
     m_cwLogEnabledHasBeenSet(false),
+    m_deobfuscationConfigurationHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_domainListHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -44,9 +46,26 @@ Aws::String UpdateAppMonitorRequest::SerializePayload() const
 
   }
 
+  if(m_deobfuscationConfigurationHasBeenSet)
+  {
+   payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+
+  }
+
   if(m_domainHasBeenSet)
   {
    payload.WithString("Domain", m_domain);
+
+  }
+
+  if(m_domainListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> domainListJsonList(m_domainList.size());
+   for(unsigned domainListIndex = 0; domainListIndex < domainListJsonList.GetLength(); ++domainListIndex)
+   {
+     domainListJsonList[domainListIndex].AsString(m_domainList[domainListIndex]);
+   }
+   payload.WithArray("DomainList", std::move(domainListJsonList));
 
   }
 

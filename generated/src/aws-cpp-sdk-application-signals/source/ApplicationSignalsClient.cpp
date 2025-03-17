@@ -22,12 +22,14 @@
 #include <aws/application-signals/ApplicationSignalsErrorMarshaller.h>
 #include <aws/application-signals/ApplicationSignalsEndpointProvider.h>
 #include <aws/application-signals/model/BatchGetServiceLevelObjectiveBudgetReportRequest.h>
+#include <aws/application-signals/model/BatchUpdateExclusionWindowsRequest.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/DeleteServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/GetServiceRequest.h>
 #include <aws/application-signals/model/GetServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/ListServiceDependenciesRequest.h>
 #include <aws/application-signals/model/ListServiceDependentsRequest.h>
+#include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsRequest.h>
 #include <aws/application-signals/model/ListServiceLevelObjectivesRequest.h>
 #include <aws/application-signals/model/ListServiceOperationsRequest.h>
 #include <aws/application-signals/model/ListServicesRequest.h>
@@ -200,6 +202,33 @@ BatchGetServiceLevelObjectiveBudgetReportOutcome ApplicationSignalsClient::Batch
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetServiceLevelObjectiveBudgetReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/budget-report");
       return BatchGetServiceLevelObjectiveBudgetReportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchUpdateExclusionWindowsOutcome ApplicationSignalsClient::BatchUpdateExclusionWindows(const BatchUpdateExclusionWindowsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchUpdateExclusionWindows);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateExclusionWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateExclusionWindows, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchUpdateExclusionWindows, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchUpdateExclusionWindows",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchUpdateExclusionWindowsOutcome>(
+    [&]()-> BatchUpdateExclusionWindowsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateExclusionWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/exclusion-windows");
+      return BatchUpdateExclusionWindowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -404,6 +433,40 @@ ListServiceDependentsOutcome ApplicationSignalsClient::ListServiceDependents(con
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceDependents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/service-dependents");
       return ListServiceDependentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListServiceLevelObjectiveExclusionWindowsOutcome ApplicationSignalsClient::ListServiceLevelObjectiveExclusionWindows(const ListServiceLevelObjectiveExclusionWindowsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListServiceLevelObjectiveExclusionWindows);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServiceLevelObjectiveExclusionWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListServiceLevelObjectiveExclusionWindows", "Required field: Id, is not set");
+    return ListServiceLevelObjectiveExclusionWindowsOutcome(Aws::Client::AWSError<ApplicationSignalsErrors>(ApplicationSignalsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListServiceLevelObjectiveExclusionWindows, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListServiceLevelObjectiveExclusionWindows, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListServiceLevelObjectiveExclusionWindows",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListServiceLevelObjectiveExclusionWindowsOutcome>(
+    [&]()-> ListServiceLevelObjectiveExclusionWindowsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceLevelObjectiveExclusionWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/slo/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/exclusion-windows");
+      return ListServiceLevelObjectiveExclusionWindowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

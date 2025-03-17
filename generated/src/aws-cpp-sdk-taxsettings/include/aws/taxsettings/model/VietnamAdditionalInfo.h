@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The electronic transaction code number on the tax return document.</p>
+     * <p>The electronic transaction code number on the tax return document. This field
+     * must be provided for successful API operation.</p>
      */
     inline const Aws::String& GetElectronicTransactionCodeNumber() const{ return m_electronicTransactionCodeNumber; }
     inline bool ElectronicTransactionCodeNumberHasBeenSet() const { return m_electronicTransactionCodeNumberHasBeenSet; }
@@ -54,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The enterprise identification number for tax registration.</p>
+     * <p>The enterprise identification number for tax registration. This field must be
+     * provided for successful API operation.</p>
      */
     inline const Aws::String& GetEnterpriseIdentificationNumber() const{ return m_enterpriseIdentificationNumber; }
     inline bool EnterpriseIdentificationNumberHasBeenSet() const { return m_enterpriseIdentificationNumberHasBeenSet; }
@@ -68,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The payment voucher number on the tax return payment document.</p>
+     * <p>The payment voucher number on the tax return payment document. This field
+     * must be provided for successful API operation.</p>
      */
     inline const Aws::String& GetPaymentVoucherNumber() const{ return m_paymentVoucherNumber; }
     inline bool PaymentVoucherNumberHasBeenSet() const { return m_paymentVoucherNumberHasBeenSet; }
@@ -82,7 +85,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date on the tax return payment document.</p>
+     * <p>The date on the tax return payment document. This field must be provided for
+     * successful API operation.</p>
      */
     inline const Aws::String& GetPaymentVoucherNumberDate() const{ return m_paymentVoucherNumberDate; }
     inline bool PaymentVoucherNumberDateHasBeenSet() const { return m_paymentVoucherNumberDateHasBeenSet; }

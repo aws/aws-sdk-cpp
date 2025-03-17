@@ -8,7 +8,9 @@
 #include <aws/rum/CloudWatchRUMRequest.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
 #include <aws/rum/model/CustomEvents.h>
+#include <aws/rum/model/DeobfuscationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -88,6 +90,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> A structure that contains the configuration for how an app monitor can
+     * deobfuscate stack traces. </p>
+     */
+    inline const DeobfuscationConfiguration& GetDeobfuscationConfiguration() const{ return m_deobfuscationConfiguration; }
+    inline bool DeobfuscationConfigurationHasBeenSet() const { return m_deobfuscationConfigurationHasBeenSet; }
+    inline void SetDeobfuscationConfiguration(const DeobfuscationConfiguration& value) { m_deobfuscationConfigurationHasBeenSet = true; m_deobfuscationConfiguration = value; }
+    inline void SetDeobfuscationConfiguration(DeobfuscationConfiguration&& value) { m_deobfuscationConfigurationHasBeenSet = true; m_deobfuscationConfiguration = std::move(value); }
+    inline CreateAppMonitorRequest& WithDeobfuscationConfiguration(const DeobfuscationConfiguration& value) { SetDeobfuscationConfiguration(value); return *this;}
+    inline CreateAppMonitorRequest& WithDeobfuscationConfiguration(DeobfuscationConfiguration&& value) { SetDeobfuscationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The top-level internet domain name for which your application has
      * administrative authority.</p>
      */
@@ -99,6 +114,23 @@ namespace Model
     inline CreateAppMonitorRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
     inline CreateAppMonitorRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
     inline CreateAppMonitorRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> List the domain names for which your application has administrative
+     * authority. The <code>CreateAppMonitor</code> requires either the domain or the
+     * domain list. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDomainList() const{ return m_domainList; }
+    inline bool DomainListHasBeenSet() const { return m_domainListHasBeenSet; }
+    inline void SetDomainList(const Aws::Vector<Aws::String>& value) { m_domainListHasBeenSet = true; m_domainList = value; }
+    inline void SetDomainList(Aws::Vector<Aws::String>&& value) { m_domainListHasBeenSet = true; m_domainList = std::move(value); }
+    inline CreateAppMonitorRequest& WithDomainList(const Aws::Vector<Aws::String>& value) { SetDomainList(value); return *this;}
+    inline CreateAppMonitorRequest& WithDomainList(Aws::Vector<Aws::String>&& value) { SetDomainList(std::move(value)); return *this;}
+    inline CreateAppMonitorRequest& AddDomainList(const Aws::String& value) { m_domainListHasBeenSet = true; m_domainList.push_back(value); return *this; }
+    inline CreateAppMonitorRequest& AddDomainList(Aws::String&& value) { m_domainListHasBeenSet = true; m_domainList.push_back(std::move(value)); return *this; }
+    inline CreateAppMonitorRequest& AddDomainList(const char* value) { m_domainListHasBeenSet = true; m_domainList.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -152,8 +184,14 @@ namespace Model
     bool m_cwLogEnabled;
     bool m_cwLogEnabledHasBeenSet = false;
 
+    DeobfuscationConfiguration m_deobfuscationConfiguration;
+    bool m_deobfuscationConfigurationHasBeenSet = false;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_domainList;
+    bool m_domainListHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

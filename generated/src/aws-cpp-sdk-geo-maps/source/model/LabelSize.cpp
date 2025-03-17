@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-maps/model/StaticMapStyle.h>
+#include <aws/geo-maps/model/LabelSize.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,44 +17,44 @@ namespace Aws
   {
     namespace Model
     {
-      namespace StaticMapStyleMapper
+      namespace LabelSizeMapper
       {
 
-        static const int Satellite_HASH = HashingUtils::HashString("Satellite");
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
+        static const int Small_HASH = HashingUtils::HashString("Small");
+        static const int Large_HASH = HashingUtils::HashString("Large");
 
 
-        StaticMapStyle GetStaticMapStyleForName(const Aws::String& name)
+        LabelSize GetLabelSizeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Satellite_HASH)
+          if (hashCode == Small_HASH)
           {
-            return StaticMapStyle::Satellite;
+            return LabelSize::Small;
           }
-          else if (hashCode == Standard_HASH)
+          else if (hashCode == Large_HASH)
           {
-            return StaticMapStyle::Standard;
+            return LabelSize::Large;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StaticMapStyle>(hashCode);
+            return static_cast<LabelSize>(hashCode);
           }
 
-          return StaticMapStyle::NOT_SET;
+          return LabelSize::NOT_SET;
         }
 
-        Aws::String GetNameForStaticMapStyle(StaticMapStyle enumValue)
+        Aws::String GetNameForLabelSize(LabelSize enumValue)
         {
           switch(enumValue)
           {
-          case StaticMapStyle::NOT_SET:
+          case LabelSize::NOT_SET:
             return {};
-          case StaticMapStyle::Satellite:
-            return "Satellite";
-          case StaticMapStyle::Standard:
-            return "Standard";
+          case LabelSize::Small:
+            return "Small";
+          case LabelSize::Large:
+            return "Large";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace StaticMapStyleMapper
+      } // namespace LabelSizeMapper
     } // namespace Model
   } // namespace GeoMaps
 } // namespace Aws

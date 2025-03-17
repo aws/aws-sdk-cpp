@@ -112,8 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of your tax registration. This can be either <code>VAT</code> or
-     * <code>GST</code>. </p>
+     * <p>Type of your tax registration. </p>
      */
     inline const TaxRegistrationType& GetRegistrationType() const{ return m_registrationType; }
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }

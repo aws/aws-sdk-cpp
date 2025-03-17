@@ -77,13 +77,12 @@ namespace Model
      * Tawil</p> </li> <li> <p> <code>IND</code>: India's view on Gilgit-Baltistan</p>
      * </li> <li> <p> <code>KEN</code>: Kenya's view on the Ilemi Triangle</p> </li>
      * <li> <p> <code>MAR</code>: Morocco's view on Western Sahara</p> </li> <li> <p>
-     * <code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p>
-     * </li> <li> <p> <code>RUS</code>: Russia's view on Crimea</p> </li> <li> <p>
-     * <code>SDN</code>: Sudan's view on the Halaib Triangle</p> </li> <li> <p>
-     * <code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p>
-     * </li> <li> <p> <code>SUR</code>: Suriname's view on the Courantyne Headwaters
-     * and Lawa Headwaters</p> </li> <li> <p> <code>SYR</code>: Syria's view on the
-     * Golan Heights</p> </li> <li> <p> <code>TUR</code>: Turkey's view on Cyprus and
+     * <code>RUS</code>: Russia's view on Crimea</p> </li> <li> <p> <code>SDN</code>:
+     * Sudan's view on the Halaib Triangle</p> </li> <li> <p> <code>SRB</code>:
+     * Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p> </li> <li> <p>
+     * <code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa
+     * Headwaters</p> </li> <li> <p> <code>SYR</code>: Syria's view on the Golan
+     * Heights</p> </li> <li> <p> <code>TUR</code>: Turkey's view on Cyprus and
      * Northern Cyprus</p> </li> <li> <p> <code>TZA</code>: Tanzania's view on Lake
      * Malawi</p> </li> <li> <p> <code>URY</code>: Uruguay's view on Rincon de
      * Artigas</p> </li> <li> <p> <code>VNM</code>: Vietnam's view on the Paracel

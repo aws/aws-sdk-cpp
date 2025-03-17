@@ -19,12 +19,14 @@
 
 /* Service model headers required in ApplicationSignalsClient header */
 #include <aws/application-signals/model/BatchGetServiceLevelObjectiveBudgetReportResult.h>
+#include <aws/application-signals/model/BatchUpdateExclusionWindowsResult.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/DeleteServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/GetServiceResult.h>
 #include <aws/application-signals/model/GetServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/ListServiceDependenciesResult.h>
 #include <aws/application-signals/model/ListServiceDependentsResult.h>
+#include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsResult.h>
 #include <aws/application-signals/model/ListServiceLevelObjectivesResult.h>
 #include <aws/application-signals/model/ListServiceOperationsResult.h>
 #include <aws/application-signals/model/ListServicesResult.h>
@@ -76,12 +78,14 @@ namespace Aws
     {
       /* Service model forward declarations required in ApplicationSignalsClient header */
       class BatchGetServiceLevelObjectiveBudgetReportRequest;
+      class BatchUpdateExclusionWindowsRequest;
       class CreateServiceLevelObjectiveRequest;
       class DeleteServiceLevelObjectiveRequest;
       class GetServiceRequest;
       class GetServiceLevelObjectiveRequest;
       class ListServiceDependenciesRequest;
       class ListServiceDependentsRequest;
+      class ListServiceLevelObjectiveExclusionWindowsRequest;
       class ListServiceLevelObjectivesRequest;
       class ListServiceOperationsRequest;
       class ListServicesRequest;
@@ -94,12 +98,14 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchGetServiceLevelObjectiveBudgetReportResult, ApplicationSignalsError> BatchGetServiceLevelObjectiveBudgetReportOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateExclusionWindowsResult, ApplicationSignalsError> BatchUpdateExclusionWindowsOutcome;
       typedef Aws::Utils::Outcome<CreateServiceLevelObjectiveResult, ApplicationSignalsError> CreateServiceLevelObjectiveOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceLevelObjectiveResult, ApplicationSignalsError> DeleteServiceLevelObjectiveOutcome;
       typedef Aws::Utils::Outcome<GetServiceResult, ApplicationSignalsError> GetServiceOutcome;
       typedef Aws::Utils::Outcome<GetServiceLevelObjectiveResult, ApplicationSignalsError> GetServiceLevelObjectiveOutcome;
       typedef Aws::Utils::Outcome<ListServiceDependenciesResult, ApplicationSignalsError> ListServiceDependenciesOutcome;
       typedef Aws::Utils::Outcome<ListServiceDependentsResult, ApplicationSignalsError> ListServiceDependentsOutcome;
+      typedef Aws::Utils::Outcome<ListServiceLevelObjectiveExclusionWindowsResult, ApplicationSignalsError> ListServiceLevelObjectiveExclusionWindowsOutcome;
       typedef Aws::Utils::Outcome<ListServiceLevelObjectivesResult, ApplicationSignalsError> ListServiceLevelObjectivesOutcome;
       typedef Aws::Utils::Outcome<ListServiceOperationsResult, ApplicationSignalsError> ListServiceOperationsOutcome;
       typedef Aws::Utils::Outcome<ListServicesResult, ApplicationSignalsError> ListServicesOutcome;
@@ -112,12 +118,14 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<BatchGetServiceLevelObjectiveBudgetReportOutcome> BatchGetServiceLevelObjectiveBudgetReportOutcomeCallable;
+      typedef std::future<BatchUpdateExclusionWindowsOutcome> BatchUpdateExclusionWindowsOutcomeCallable;
       typedef std::future<CreateServiceLevelObjectiveOutcome> CreateServiceLevelObjectiveOutcomeCallable;
       typedef std::future<DeleteServiceLevelObjectiveOutcome> DeleteServiceLevelObjectiveOutcomeCallable;
       typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
       typedef std::future<GetServiceLevelObjectiveOutcome> GetServiceLevelObjectiveOutcomeCallable;
       typedef std::future<ListServiceDependenciesOutcome> ListServiceDependenciesOutcomeCallable;
       typedef std::future<ListServiceDependentsOutcome> ListServiceDependentsOutcomeCallable;
+      typedef std::future<ListServiceLevelObjectiveExclusionWindowsOutcome> ListServiceLevelObjectiveExclusionWindowsOutcomeCallable;
       typedef std::future<ListServiceLevelObjectivesOutcome> ListServiceLevelObjectivesOutcomeCallable;
       typedef std::future<ListServiceOperationsOutcome> ListServiceOperationsOutcomeCallable;
       typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
@@ -133,12 +141,14 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const ApplicationSignalsClient*, const Model::BatchGetServiceLevelObjectiveBudgetReportRequest&, const Model::BatchGetServiceLevelObjectiveBudgetReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetServiceLevelObjectiveBudgetReportResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::BatchUpdateExclusionWindowsRequest&, const Model::BatchUpdateExclusionWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateExclusionWindowsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::CreateServiceLevelObjectiveRequest&, const Model::CreateServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceLevelObjectiveResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::DeleteServiceLevelObjectiveRequest&, const Model::DeleteServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceLevelObjectiveResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::GetServiceLevelObjectiveRequest&, const Model::GetServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceLevelObjectiveResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceDependenciesRequest&, const Model::ListServiceDependenciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceDependenciesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceDependentsRequest&, const Model::ListServiceDependentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceDependentsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceLevelObjectiveExclusionWindowsRequest&, const Model::ListServiceLevelObjectiveExclusionWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceLevelObjectiveExclusionWindowsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceLevelObjectivesRequest&, const Model::ListServiceLevelObjectivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceLevelObjectivesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceOperationsRequest&, const Model::ListServiceOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceOperationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
