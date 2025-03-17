@@ -23,7 +23,9 @@ AppMonitor::AppMonitor() :
     m_createdHasBeenSet(false),
     m_customEventsHasBeenSet(false),
     m_dataStorageHasBeenSet(false),
+    m_deobfuscationConfigurationHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_domainListHasBeenSet(false),
     m_idHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -69,11 +71,28 @@ AppMonitor& AppMonitor::operator =(JsonView jsonValue)
     m_dataStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeobfuscationConfiguration"))
+  {
+    m_deobfuscationConfiguration = jsonValue.GetObject("DeobfuscationConfiguration");
+
+    m_deobfuscationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
 
     m_domainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DomainList"))
+  {
+    Aws::Utils::Array<JsonView> domainListJsonList = jsonValue.GetArray("DomainList");
+    for(unsigned domainListIndex = 0; domainListIndex < domainListJsonList.GetLength(); ++domainListIndex)
+    {
+      m_domainList.push_back(domainListJsonList[domainListIndex].AsString());
+    }
+    m_domainListHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -145,9 +164,26 @@ JsonValue AppMonitor::Jsonize() const
 
   }
 
+  if(m_deobfuscationConfigurationHasBeenSet)
+  {
+   payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+
+  }
+
   if(m_domainHasBeenSet)
   {
    payload.WithString("Domain", m_domain);
+
+  }
+
+  if(m_domainListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> domainListJsonList(m_domainList.size());
+   for(unsigned domainListIndex = 0; domainListIndex < domainListJsonList.GetLength(); ++domainListIndex)
+   {
+     domainListJsonList[domainListIndex].AsString(m_domainList[domainListIndex]);
+   }
+   payload.WithArray("DomainList", std::move(domainListJsonList));
 
   }
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-maps/model/StaticMapStyle.h>
+#include <aws/rum/model/DeobfuscationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,48 +13,48 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace GeoMaps
+  namespace CloudWatchRUM
   {
     namespace Model
     {
-      namespace StaticMapStyleMapper
+      namespace DeobfuscationStatusMapper
       {
 
-        static const int Satellite_HASH = HashingUtils::HashString("Satellite");
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
-        StaticMapStyle GetStaticMapStyleForName(const Aws::String& name)
+        DeobfuscationStatus GetDeobfuscationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Satellite_HASH)
+          if (hashCode == ENABLED_HASH)
           {
-            return StaticMapStyle::Satellite;
+            return DeobfuscationStatus::ENABLED;
           }
-          else if (hashCode == Standard_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return StaticMapStyle::Standard;
+            return DeobfuscationStatus::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StaticMapStyle>(hashCode);
+            return static_cast<DeobfuscationStatus>(hashCode);
           }
 
-          return StaticMapStyle::NOT_SET;
+          return DeobfuscationStatus::NOT_SET;
         }
 
-        Aws::String GetNameForStaticMapStyle(StaticMapStyle enumValue)
+        Aws::String GetNameForDeobfuscationStatus(DeobfuscationStatus enumValue)
         {
           switch(enumValue)
           {
-          case StaticMapStyle::NOT_SET:
+          case DeobfuscationStatus::NOT_SET:
             return {};
-          case StaticMapStyle::Satellite:
-            return "Satellite";
-          case StaticMapStyle::Standard:
-            return "Standard";
+          case DeobfuscationStatus::ENABLED:
+            return "ENABLED";
+          case DeobfuscationStatus::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace StaticMapStyleMapper
+      } // namespace DeobfuscationStatusMapper
     } // namespace Model
-  } // namespace GeoMaps
+  } // namespace CloudWatchRUM
 } // namespace Aws

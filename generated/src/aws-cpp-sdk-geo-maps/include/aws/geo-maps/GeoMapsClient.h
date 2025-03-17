@@ -87,7 +87,8 @@ namespace GeoMaps
         virtual ~GeoMapsClient();
 
         /**
-         * <p>Returns the map's glyphs.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetGlyphs</code> returns the map's glyphs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetGlyphs">AWS
          * API Reference</a></p>
          */
@@ -112,7 +113,8 @@ namespace GeoMaps
         }
 
         /**
-         * <p>Returns the map's sprites.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetSprites</code> returns the map's sprites.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetSprites">AWS
          * API Reference</a></p>
          */
@@ -137,10 +139,10 @@ namespace GeoMaps
         }
 
         /**
-         * <p>Provides high-quality static map images with customizable options. You can
-         * modify the map's appearance and overlay additional information. It's an ideal
-         * solution for applications requiring tailored static map snapshots.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> <code>GetStaticMap</code> provides high-quality static map images with
+         * customizable options. You can modify the map's appearance and overlay additional
+         * information. It's an ideal solution for applications requiring tailored static
+         * map snapshots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStaticMap">AWS
          * API Reference</a></p>
          */
@@ -165,7 +167,8 @@ namespace GeoMaps
         }
 
         /**
-         * <p>Returns information about the style.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetStyleDescriptor</code> returns information about the
+         * style.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStyleDescriptor">AWS
          * API Reference</a></p>
          */
@@ -190,9 +193,9 @@ namespace GeoMaps
         }
 
         /**
-         * <p>Returns a tile. Map tiles are used by clients to render a map. they're
-         * addressed using a grid arrangement with an X coordinate, Y coordinate, and Z
-         * (zoom) level.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetTile</code> returns a tile. Map tiles are used by clients to render
+         * a map. they're addressed using a grid arrangement with an X coordinate, Y
+         * coordinate, and Z (zoom) level.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetTile">AWS
          * API Reference</a></p>
          */

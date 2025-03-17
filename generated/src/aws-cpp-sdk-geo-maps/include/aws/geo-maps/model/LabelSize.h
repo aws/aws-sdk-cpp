@@ -13,19 +13,19 @@ namespace GeoMaps
 {
 namespace Model
 {
-  enum class StaticMapStyle
+  enum class LabelSize
   {
     NOT_SET,
-    Satellite,
-    Standard
+    Small,
+    Large
   };
 
-namespace StaticMapStyleMapper
+namespace LabelSizeMapper
 {
-AWS_GEOMAPS_API StaticMapStyle GetStaticMapStyleForName(const Aws::String& name);
+AWS_GEOMAPS_API LabelSize GetLabelSizeForName(const Aws::String& name);
 
-AWS_GEOMAPS_API Aws::String GetNameForStaticMapStyle(StaticMapStyle value);
-} // namespace StaticMapStyleMapper
+AWS_GEOMAPS_API Aws::String GetNameForLabelSize(LabelSize value);
+} // namespace LabelSizeMapper
 } // namespace Model
 } // namespace GeoMaps
 } // namespace Aws

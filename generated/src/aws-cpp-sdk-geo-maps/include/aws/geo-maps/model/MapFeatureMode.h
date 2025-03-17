@@ -13,19 +13,19 @@ namespace GeoMaps
 {
 namespace Model
 {
-  enum class StaticMapStyle
+  enum class MapFeatureMode
   {
     NOT_SET,
-    Satellite,
-    Standard
+    Enabled,
+    Disabled
   };
 
-namespace StaticMapStyleMapper
+namespace MapFeatureModeMapper
 {
-AWS_GEOMAPS_API StaticMapStyle GetStaticMapStyleForName(const Aws::String& name);
+AWS_GEOMAPS_API MapFeatureMode GetMapFeatureModeForName(const Aws::String& name);
 
-AWS_GEOMAPS_API Aws::String GetNameForStaticMapStyle(StaticMapStyle value);
-} // namespace StaticMapStyleMapper
+AWS_GEOMAPS_API Aws::String GetNameForMapFeatureMode(MapFeatureMode value);
+} // namespace MapFeatureModeMapper
 } // namespace Model
 } // namespace GeoMaps
 } // namespace Aws

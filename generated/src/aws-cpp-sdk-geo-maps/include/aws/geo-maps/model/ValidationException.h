@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The field where thebb invalid entry was detected.</p>
+     * <p>The field where the invalid entry was detected.</p>
      */
     inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

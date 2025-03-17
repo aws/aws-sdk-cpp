@@ -18,6 +18,7 @@
 #include <aws/wafv2/model/HeaderOrder.h>
 #include <aws/wafv2/model/JA3Fingerprint.h>
 #include <aws/wafv2/model/JA4Fingerprint.h>
+#include <aws/wafv2/model/UriFragment.h>
 #include <utility>
 
 namespace Aws
@@ -313,6 +314,25 @@ namespace Model
     inline FieldToMatch& WithJA4Fingerprint(const JA4Fingerprint& value) { SetJA4Fingerprint(value); return *this;}
     inline FieldToMatch& WithJA4Fingerprint(JA4Fingerprint&& value) { SetJA4Fingerprint(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Inspect fragments of the request URI. You must configure scope and pattern
+     * matching filters in the <code>UriFragment</code> object, to define the fragment
+     * of a URI that WAF inspects. </p> <p>Only the first 8 KB (8192 bytes) of a
+     * request's URI fragments and only the first 200 URI fragments are forwarded to
+     * WAF for inspection by the underlying host service. You must configure how to
+     * handle any oversize URI fragment content in the <code>UriFragment</code> object.
+     * WAF applies the pattern matching filters to the cookies that it receives from
+     * the underlying host service. </p>
+     */
+    inline const UriFragment& GetUriFragment() const{ return m_uriFragment; }
+    inline bool UriFragmentHasBeenSet() const { return m_uriFragmentHasBeenSet; }
+    inline void SetUriFragment(const UriFragment& value) { m_uriFragmentHasBeenSet = true; m_uriFragment = value; }
+    inline void SetUriFragment(UriFragment&& value) { m_uriFragmentHasBeenSet = true; m_uriFragment = std::move(value); }
+    inline FieldToMatch& WithUriFragment(const UriFragment& value) { SetUriFragment(value); return *this;}
+    inline FieldToMatch& WithUriFragment(UriFragment&& value) { SetUriFragment(std::move(value)); return *this;}
+    ///@}
   private:
 
     SingleHeader m_singleHeader;
@@ -353,6 +373,9 @@ namespace Model
 
     JA4Fingerprint m_jA4Fingerprint;
     bool m_jA4FingerprintHasBeenSet = false;
+
+    UriFragment m_uriFragment;
+    bool m_uriFragmentHasBeenSet = false;
   };
 
 } // namespace Model

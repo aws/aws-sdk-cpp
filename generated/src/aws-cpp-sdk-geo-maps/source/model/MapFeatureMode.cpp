@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-maps/model/StaticMapStyle.h>
+#include <aws/geo-maps/model/MapFeatureMode.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,44 +17,44 @@ namespace Aws
   {
     namespace Model
     {
-      namespace StaticMapStyleMapper
+      namespace MapFeatureModeMapper
       {
 
-        static const int Satellite_HASH = HashingUtils::HashString("Satellite");
-        static const int Standard_HASH = HashingUtils::HashString("Standard");
+        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 
-        StaticMapStyle GetStaticMapStyleForName(const Aws::String& name)
+        MapFeatureMode GetMapFeatureModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Satellite_HASH)
+          if (hashCode == Enabled_HASH)
           {
-            return StaticMapStyle::Satellite;
+            return MapFeatureMode::Enabled;
           }
-          else if (hashCode == Standard_HASH)
+          else if (hashCode == Disabled_HASH)
           {
-            return StaticMapStyle::Standard;
+            return MapFeatureMode::Disabled;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StaticMapStyle>(hashCode);
+            return static_cast<MapFeatureMode>(hashCode);
           }
 
-          return StaticMapStyle::NOT_SET;
+          return MapFeatureMode::NOT_SET;
         }
 
-        Aws::String GetNameForStaticMapStyle(StaticMapStyle enumValue)
+        Aws::String GetNameForMapFeatureMode(MapFeatureMode enumValue)
         {
           switch(enumValue)
           {
-          case StaticMapStyle::NOT_SET:
+          case MapFeatureMode::NOT_SET:
             return {};
-          case StaticMapStyle::Satellite:
-            return "Satellite";
-          case StaticMapStyle::Standard:
-            return "Standard";
+          case MapFeatureMode::Enabled:
+            return "Enabled";
+          case MapFeatureMode::Disabled:
+            return "Disabled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace StaticMapStyleMapper
+      } // namespace MapFeatureModeMapper
     } // namespace Model
   } // namespace GeoMaps
 } // namespace Aws
