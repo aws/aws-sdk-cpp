@@ -225,6 +225,24 @@ TEST_F(DefaultRateLimitTest, unnormalizedChangeRateLimitTest) {
   ASSERT_TRUE(delay.count() == 4910);
 }
 
+TEST_F(DefaultRateLimitTest, overflowTest) {
+  // 500MB/s
+  int max_rate = 500 * 1024 * 1024;
+  TestDefaultRateLimiter limiter(max_rate, DefaultRateLimitTest::GetTestTime);
+
+  // 7 days
+  int64_t time_elapsed = 7LL * 24 * 60 * 60 * 1000000;
+
+  limiter.ApplyCost(0);
+  auto delay = limiter.ApplyCost(0);
+  ASSERT_TRUE(delay.count() == 0);
+
+  // The original code here would cause the sleep duration to be excessively long
+  SetMillisecondsElapsed(time_elapsed);
+  delay = limiter.ApplyCost(0);
+  ASSERT_TRUE(delay.count() == 0);
+}
+
 TEST_F(DefaultRateLimitTest, fractionalLimitTest) {
   TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
 

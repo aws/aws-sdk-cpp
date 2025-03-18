@@ -61,15 +61,23 @@ class DefaultRateLimiter : public RateLimiterInterface {
     auto now = m_elapsedTimeFunction();
     auto elapsedTime = (now - m_accumulatorUpdated).count();
 
-    // replenish the accumulator based on how much time has passed
-    auto temp = elapsedTime * m_replenishNumerator + m_accumulatorFraction;
-    m_accumulator += temp / m_replenishDenominator;
-    m_accumulatorFraction = temp % m_replenishDenominator;
-
-    // the accumulator is capped based on the maximum rate
-    m_accumulator = (std::min)(m_accumulator, m_maxRate);
-    if (m_accumulator == m_maxRate) {
+    // check for overflow case
+    if (m_replenishNumerator != 0 && elapsedTime > 0 &&
+        (elapsedTime > std::numeric_limits<int64_t>::max() / m_replenishNumerator ||
+         m_accumulatorFraction > std::numeric_limits<int64_t>::max() - (elapsedTime * m_replenishNumerator))) {
+      m_accumulator = m_maxRate;
       m_accumulatorFraction = 0;
+    } else {
+      // replenish the accumulator based on how much time has passed
+      auto temp = elapsedTime * m_replenishNumerator + m_accumulatorFraction;
+      m_accumulator += temp / m_replenishDenominator;
+      m_accumulatorFraction = temp % m_replenishDenominator;
+
+      // the accumulator is capped based on the maximum rate
+      m_accumulator = (std::min)(m_accumulator, m_maxRate);
+      if (m_accumulator == m_maxRate) {
+        m_accumulatorFraction = 0;
+      }
     }
 
     // if the accumulator is still negative, then we'll have to wait
